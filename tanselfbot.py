@@ -370,7 +370,7 @@ def leaveMembers(to, mid):
         no = 1
         num = 2
         for i in mid:
-            ginfo = boy.getGroup(to)
+            ginfo = ptatan1983.getGroup(to)
             mention = "@x\n"
             slen = str(len(textx))
             elen = str(len(textx) + len(mention) - 1)
@@ -701,7 +701,7 @@ def bot(op):
                 k10.leaveRoom(op.param1)   
         if op.type == 24:
             if wait['leaveRoom'] == True:
-                boy.leaveRoom(op.param1)
+                ptatan1983.leaveRoom(op.param1)
                 k1.leaveRoom(op.param1)
                 k2.leaveRoom(op.param1)
                 k3.leaveRoom(op.param1)
@@ -2745,7 +2745,7 @@ def bot(op):
                                     random.choice(ABC).kickoutFromGroup(op.param1,[op.param2])
                                     random.choice(ABC).updateGroup(G)
                                     Ticket = random.choice(ABC).reissueGroupTicket(op.param1)
-                                    boy.acceptGroupInvitationByTicket(op.param1,Ticket)
+                                    ptatan1983.acceptGroupInvitationByTicket(op.param1,Ticket)
                                     sw.acceptGroupInvitationByTicket(op.param1,Ticket)
                                     G = random.choice(ABC).getGroup(op.param1)
                                     G.preventedJoinByTicket = True
@@ -3220,7 +3220,7 @@ def bot(op):
                    query = int(stk_id)
                    if type(query) == int:
                             data = 'https://stickershop.line-scdn.net/stickershop/v1/sticker/'+str(query)+'/ANDROID/sticker.png'
-                            path = boy.downloadFileURL(data)
+                            path = ptatan1983.downloadFileURL(data)
                             msg_dict1[msg.id] = {"text":str(ret_),"data":path,"from":msg._from,"createdTime":msg.createdTime}
                                                       
                             
@@ -3232,53 +3232,53 @@ def bot(op):
                if msg.contentType == 7:
                  if wait["sticker"] == True:
                     msg.contentType = 0
-                    boy.sendMessage(msg.to,"STKID : " + msg.contentMetadata["STKID"] + "\nSTKPKGID : " + msg.contentMetadata["STKPKGID"] + "\nSTKVER : " + msg.contentMetadata["STKVER"]+ "\n\n「Link Sticker」" + "\nline://shop/detail/" + msg.contentMetadata["STKPKGID"])
+                    ptatan1983.sendMessage(msg.to,"STKID : " + msg.contentMetadata["STKID"] + "\nSTKPKGID : " + msg.contentMetadata["STKPKGID"] + "\nSTKVER : " + msg.contentMetadata["STKVER"]+ "\n\n「Link Sticker」" + "\nline://shop/detail/" + msg.contentMetadata["STKPKGID"])
                if msg.contentType == 13:
                  if wait["contact"] == True:
                     msg.contentType = 0
                     boy.sendMessage(msg.to,msg.contentMetadata["mid"])
                     if 'displayName' in msg.contentMetadata:
-                        contact = boy.getContact(msg.contentMetadata["mid"])
-                        path = boy.getContact(msg.contentMetadata["mid"]).picturePath
+                        contact = ptatan1983.getContact(msg.contentMetadata["mid"])
+                        path = ptatan1983.getContact(msg.contentMetadata["mid"]).picturePath
                         image = 'http://dl.profile.line.naver.jp'+path
-                        boy.sendMessage(msg.to,"❂➣ Nama : " + msg.contentMetadata["displayName"] + "\n❂➣ MID : " + msg.contentMetadata["mid"] + "\n❂➣ Status : " + contact.statusMessage + "\n❂➣ Picture URL : http://dl.profile.line-cdn.net/" + contact.pictureStatus)
-                        boy.sendImageWithURL(msg.to, image)
+                        ptatan1983.sendMessage(msg.to,"❂➣ Nama : " + msg.contentMetadata["displayName"] + "\n❂➣ MID : " + msg.contentMetadata["mid"] + "\n❂➣ Status : " + contact.statusMessage + "\n❂➣ Picture URL : http://dl.profile.line-cdn.net/" + contact.pictureStatus)
+                        ptatan1983.sendImageWithURL(msg.to, image)
 #===========ADD BOT============#
                if msg.contentType == 13:
                  if msg._from in admin:
                   if wait["addbots"] == True:
                     if msg.contentMetadata["mid"] in Bots:
-                        boy.sendMessage(msg.to,"Contact itu sudah jadi anggota bot")
+                        ptatan1983.sendMessage(msg.to,"Contact itu sudah jadi anggota bot")
                         wait["addbots"] = True
                     else:
                         Bots.append(msg.contentMetadata["mid"])
                         wait["addbots"] = True
-                        boy.sendMessage(msg.to,"Berhasil menambahkan ke anggota bot")
+                        ptatan1983.sendMessage(msg.to,"Berhasil menambahkan ke anggota bot")
                  if wait["dellbots"] == True:
                     if msg.contentMetadata["mid"] in Bots:
                         Bots.remove(msg.contentMetadata["mid"])
-                        boy.sendMessage(msg.to,"Berhasil menghapus dari anggota bot")
+                        ptatan1983.sendMessage(msg.to,"Berhasil menghapus dari anggota bot")
                     else:
                         wait["dellbots"] = True
-                        boy.sendMessage(msg.to,"Contact itu bukan anggota Boy-FirA™️ BOT")
+                        ptatan1983.sendMessage(msg.to,"Contact itu bukan anggota Boy-FirA™️ BOT")
 #===========ADD STAFF============#
                  if msg._from in admin:
                   if wait["addstaff"] == True:
                     if msg.contentMetadata["mid"] in staff:
-                        boy.sendMessage(msg.to,"Contact itu sudah jadi staff")
+                        ptatan1983.sendMessage(msg.to,"Contact itu sudah jadi staff")
                         wait["addstaff"] = True
                     else:
                         staff.append(msg.contentMetadata["mid"])
                         wait["addstaff"] = True
-                        boy.sendMessage(msg.to,"Berhasil menambahkan ke staff")
+                        ptatan1983.sendMessage(msg.to,"Berhasil menambahkan ke staff")
                  if wait["dellstaff"] == True:
                     if msg.contentMetadata["mid"] in staff:
                         staff.remove(msg.contentMetadata["mid"])
-                        boy.sendMessage(msg.to,"Berhasil menghapus dari staff")
+                        ptatan1983.sendMessage(msg.to,"Berhasil menghapus dari staff")
                         wait["dellstaff"] = True
                     else:
                         wait["dellstaff"] = True
-                        boy.sendMessage(msg.to,"Contact itu bukan staff")
+                        ptatan1983.sendMessage(msg.to,"Contact itu bukan staff")
 #===========ADD ADMIN============#
                  if msg._from in admin:
                   if wait["addadmin"] == True:
