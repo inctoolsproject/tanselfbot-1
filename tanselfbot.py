@@ -3338,7 +3338,7 @@ def bot(op):
                     if Setmain["Addimage"] == True:
                         msgid = msg.id
                         fotoo = "https://obs.line-apps.com/talk/m/download.nhn?oid="+msgid
-                        headers = boy.Talk.Headers
+                        headers = ptatan1983.Talk.Headers
                         r = requests.get(fotoo, headers=headers, stream=True)
                         if r.status_code == 200:
                             path = os.path.join(os.path.dirname(__file__), 'dataPhotos/%s.jpg' % Setmain["Img"])
@@ -3351,7 +3351,7 @@ def bot(op):
                if msg.toType == 2:
                  if msg._from in admin:
                    if settings["groupPicture"] == True:
-                     path = boy.downloadObjectMsg(msg_id)
+                     path = ptatan1983.downloadObjectMsg(msg_id)
                      settings["groupPicture"] = False
                      ptatan1983.updateGroupPicture(msg.to, path)
                      ptatan1983.sendMessage(msg.to, "Berhasil mengubah foto group")
@@ -3359,7 +3359,7 @@ def bot(op):
                if msg.contentType == 1:
                    if msg._from in admin:
                        if mid in Setmain["AFfoto"]:
-                            path = boy.downloadObjectMsg(msg_id)
+                            path = ptatan1983.downloadObjectMsg(msg_id)
                             del Setmain["AFfoto"][mid]
                             ptatan1983.updateProfilePicture(path)
                             ptatan1983.sendMessage(msg.to,"Foto berhasil dirubah")
