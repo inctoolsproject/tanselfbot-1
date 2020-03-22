@@ -1949,7 +1949,7 @@ def bot(op):
                                 wait["invite"] = False
                                 break                              
                             except:             
-                                    boy.sendText(msg.to,"ᴇʀʀᴏʀ")
+                                    ptatan1983.sendText(msg.to,"ᴇʀʀᴏʀ")
                                     wait["invite"] = False
                                     break
 #_______________________________________ __________
@@ -1995,8 +1995,8 @@ def bot(op):
                                     except:
                                         try:
                                             if op.param3 not in wait["blacklist"]:
-                                                boy.kickoutFromGroup(op.param1,[op.param2])
-                                                boy.inviteIntoGroup(op.param1,[Zmid])
+                                                ptatan1983.kickoutFromGroup(op.param1,[op.param2])
+                                                ptatan1983.inviteIntoGroup(op.param1,[Zmid])
                                                 sw.acceptGroupInvitation(op.param1)
                                                 sw.kickoutFromGroup(op.param1,[op.param2])
                                         except:
@@ -2049,7 +2049,7 @@ def bot(op):
                                     except:
                                         try:
                                             if op.param3 not in wait["blacklist"]:
-                                                boy.kickoutFromGroup(op.param1,[op.param2])
+                                                ptatan1983.kickoutFromGroup(op.param1,[op.param2])
                                         except:
                                             pass
                 return
@@ -2099,7 +2099,7 @@ def bot(op):
                     wait["blacklist"][op.param2] = True
                     try:
                         k1.inviteIntoGroup(op.param1,[op.param3])
-                        boy.acceptGroupInvitation(op.param1)
+                        ptatan1983.acceptGroupInvitation(op.param1)
                         k1.kickoutFromGroup(op.param1,[op.param2])
                     except:
                         try:
@@ -2130,9 +2130,9 @@ def bot(op):
                 else:
                     wait["blacklist"][op.param2] = True
                     try:
-                        boy.inviteIntoGroup(op.param1,[op.param3])
+                        ptatan1983.inviteIntoGroup(op.param1,[op.param3])
                         k1.acceptGroupInvitation(op.param1)
-                        boy.kickoutFromGroup(op.param1,[op.param2])
+                        ptatan1983.kickoutFromGroup(op.param1,[op.param2])
                     except:
                         try:
                             G = random.choice(ABC).getGroup(op.param1)
@@ -2165,12 +2165,12 @@ def bot(op):
                     try:
                         k1.kickoutFromGroup(op.param1,[op.param2])
                         k1.inviteIntoGroup(op.param1,[op.param3])
-                        boy.acceptGroupInvitation(op.param1)
+                        ptatan1983.acceptGroupInvitation(op.param1)
                     except:
                         try:
                             k2.kickoutFromGroup(op.param1,[op.param2])
                             k2.inviteIntoGroup(op.param1,[op.param3])
-                            boy.acceptGroupInvitation(op.param1)
+                            ptatan1983.acceptGroupInvitation(op.param1)
                         except:
                             try:
                                 k3.kickoutFromGroup(op.param1,[op.param2])
@@ -2183,7 +2183,7 @@ def bot(op):
                                     random.choice(ABC).kickoutFromGroup(op.param1,[op.param2])
                                     random.choice(ABC).updateGroup(G)
                                     Ticket = random.choice(ABC).reissueGroupTicket(op.param1)
-                                    boy.acceptGroupInvitationByTicket(op.param1,Ticket)
+                                    ptatan1983.acceptGroupInvitationByTicket(op.param1,Ticket)
                                     G = random.choice(ABC).getGroup(op.param1)
                                     G.preventedJoinByTicket = True
                                     random.choice(ABC).updateGroup(G)
@@ -2192,12 +2192,12 @@ def bot(op):
                                     try:
                                         k1.kickoutFromGroup(op.param1,[op.param2])
                                         k1.inviteIntoGroup(op.param1,[op.param3])
-                                        boy.acceptGroupInvitation(op.param1)
+                                        ptatan1983.acceptGroupInvitation(op.param1)
                                     except:
                                         try:
                                             k2.kickoutFromGroup(op.param1,[op.param2])
                                             k2.inviteIntoGroup(op.param1,[op.param3])
-                                            boy.acceptGroupInvitation(op.param1)
+                                            ptatan1983.acceptGroupInvitation(op.param1)
                                         except:
                                             pass
                 return
@@ -2693,7 +2693,7 @@ def bot(op):
                                     random.choice(ABC).kickoutFromGroup(op.param1,[op.param2])
                                     random.choice(ABC).updateGroup(G)
                                     Ticket = random.choice(ABC).reissueGroupTicket(op.param1)
-                                    boy.acceptGroupInvitationByTicket(op.param1,Ticket)
+                                    ptatan1983.acceptGroupInvitationByTicket(op.param1,Ticket)
                                     k10.acceptGroupInvitationByTicket(op.param1,Ticket)
                                     G = random.choice(ABC).getGroup(op.param1)
                                     G.preventedJoinByTicket = True
@@ -2771,7 +2771,7 @@ def bot(op):
                 pass
               else:
                   random.choice(ABC).kickoutFromGroup(op.param1,[op.param2])
-                  boy.inviteIntoGroup(op.param1,[op.param3])                
+                  ptatan1983.inviteIntoGroup(op.param1,[op.param3])                
             if op.param3 in Zmid: #Akun Utama Ke Kick
                 G = random.choice(ABC).getGroup(op.param1)
                 random.choice(ABC).kickoutFromGroup(op.param1,[op.param2])
@@ -2797,8 +2797,8 @@ def bot(op):
                 else:
                     wait["blacklist"][op.param2] = True
                     try:
-                        boy.findAndAddContactsByMid(op.param1,admin)
-                        boy.inviteIntoGroup(op.param1,admin)
+                        ptatan1983.findAndAddContactsByMid(op.param1,admin)
+                        ptatan1983.inviteIntoGroup(op.param1,admin)
                         random.choice(ABC).kickoutFromGroup(op.param1,[op.param2])
                     except:
                         try:
@@ -2981,15 +2981,15 @@ def bot(op):
 
             if cctv['cyduk'][op.param1]==True:
                 if op.param1 in cctv['point']:
-                    Name = boy.getContact(op.param2).displayName
+                    Name = ptatan1983.getContact(op.param2).displayName
                     if Name in cctv['sidermem'][op.param1]:
                         pass
                     else:
                         cctv['sidermem'][op.param1] += "\n~ " + Name
                         siderMembers(op.param1, [op.param2])
-                        contact = boy.getContact(op.param2)
+                        contact = ptatan1983.getContact(op.param2)
                         image = "http://dl.profile.line-cdn.net/" + contact.pictureStatus
-                        boy.sendImageWithURL(op.param1, image)                        
+                        ptatan1983.sendImageWithURL(op.param1, image)                        
                         
                     
         if op.type == 65:
@@ -3000,8 +3000,8 @@ def bot(op):
                     if msg_id in msg_dict:
                         if msg_dict[msg_id]["from"]:
                            if msg_dict[msg_id]["text"] == 'Gambarnya dibawah':
-                                ginfo = boy.getGroup(at)
-                                Boy = boy.getContact(msg_dict[msg_id]["from"])
+                                ginfo = ptatan1983.getGroup(at)
+                                Ptatan1983 = ptatan1983.getContact(msg_dict[msg_id]["from"])
                                 zx = ""
                                 zxc = ""
                                 zx2 = []
@@ -3018,18 +3018,18 @@ def bot(op):
                                 zx2.append(zx)
                                 zxc += pesan2
                                 text = xpesan + zxc + ret_ + ""
-                                boy.sendMessage(at, text, contentMetadata={'MENTION':str('{"MENTIONEES":'+json.dumps(zx2).replace(' ','')+'}')}, contentType=0)
-                                boy.sendImage(at, msg_dict[msg_id]["data"])
+                                ptatan1983.sendMessage(at, text, contentMetadata={'MENTION':str('{"MENTIONEES":'+json.dumps(zx2).replace(' ','')+'}')}, contentType=0)
+                                ptatan1983.sendImage(at, msg_dict[msg_id]["data"])
                            else:
-                                ginfo = boy.getGroup(at)
-                                Boy = boy.getContact(msg_dict[msg_id]["from"])
+                                ginfo = ptatan1983.getGroup(at)
+                                Ptatan1983 = ptatan1983.getContact(msg_dict[msg_id]["from"])
                                 ret_ =  "「 UNSEND MESSAGE 」\n"
-                                ret_ += "❂➣ Pengirim : {}".format(str(Boy.displayName))
+                                ret_ += "❂➣ Pengirim : {}".format(str(ptatan1983.displayName))
                                 ret_ += "\n❂➣ Nama Grup : {}".format(str(ginfo.name))
                                 ret_ += "\n❂➣ Waktu Ngirim : {}".format(dt_to_str(cTime_to_datetime(msg_dict[msg_id]["createdTime"])))
                                 ret_ += "\n❂➣Pesannya : {}".format(str(msg_dict[msg_id]["text"]))
                                 ret_ += "\n❂➣ BY: SELFBOT-BY:MAX"
-                                boy.sendMessage(at, str(ret_))
+                                ptatan1983.sendMessage(at, str(ret_))
                         del msg_dict[msg_id]
                 except Exception as e:
                     print(e)
