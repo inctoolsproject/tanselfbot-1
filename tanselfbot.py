@@ -1387,7 +1387,7 @@ def bot(op):
         if op.type == 13:
             if op.param3 in mid:
                 if op.param2 in Bots:
-                    boy.acceptGroupInvitation(op.param1)
+                    ptatan1983.acceptGroupInvitation(op.param1)
             if op.param3 in Amid:
                 if op.param2 in Bots:
                     k1.acceptGroupInvitation(op.param1)
@@ -2107,7 +2107,7 @@ def bot(op):
                             G.preventedJoinByTicket = False
                             random.choice(ABC).updateGroup(G)
                             Ticket = random.choice(ABC).reissueGroupTicket(op.param1)
-                            boy.acceptGroupInvitationByTicket(op.param1,Ticket)
+                            ptatan1983.acceptGroupInvitationByTicket(op.param1,Ticket)
                             random.choice(ABC).kickoutFromGroup(op.param1,[op.param2])
                             G = random.choice(ABC).getGroup(op.param1)
                             G.preventedJoinByTicket = True
@@ -2778,7 +2778,7 @@ def bot(op):
                 G.preventJoinByTicket = False
                 random.choice(ABC).updateGroup(G)
                 Ticket = random.choice(ABC).reissueGroupTicket(op.param1)
-                boy.acceptGroupInvitationByTicket(op.param1,Ticket)
+                ptatan1983.acceptGroupInvitationByTicket(op.param1,Ticket)
                 time.sleep(0.01)
                 G.preventJoinByTicket = True
                 random.choice(ABC).updateGroup(G)
@@ -3041,16 +3041,16 @@ def bot(op):
                     msg_id = op.param2
                     if msg_id in msg_dict1:
                         if msg_dict1[msg_id]["from"]:
-                                ginfo = boy.getGroup(at)
-                                Boy = boy.getContact(msg_dict1[msg_id]["from"])
+                                ginfo = ptatan1983.getGroup(at)
+                                Ptatan1983 = ptatan1983.getContact(msg_dict1[msg_id]["from"])
                                 ret_ =  "「 Sticker Dihapus 」\n"
-                                ret_ += "❂➣ Pengirim : {}".format(str(Boy.displayName))
+                                ret_ += "❂➣ Pengirim : {}".format(str(ptatan1983.displayName))
                                 ret_ += "\n❂➣ Nama Grup : {}".format(str(ginfo.name))
                                 ret_ += "\n❂➣ Waktu Ngirim : {}".format(dt_to_str(cTime_to_datetime(msg_dict1[msg_id]["createdTime"])))
                                 ret_ += "\n❂➣ BY: SELFBOT-BY:MAX"
                                 ret_ += "{}".format(str(msg_dict1[msg_id]["text"]))
-                                boy.sendMessage(at, str(ret_))
-                                boy.sendImage(at, msg_dict1[msg_id]["data"])
+                                ptatan1983.sendMessage(at, str(ret_))
+                                ptatan1983.sendImage(at, msg_dict1[msg_id]["data"])
                         del msg_dict1[msg_id]
                 except Exception as e:
                     print(e)
@@ -3066,7 +3066,7 @@ def bot(op):
                            data = r.text
                            data = json.loads(data)
                            if data["status"] == 200:
-                               boy.sendMessage(msg.to, str(data["answer"])) 
+                               ptatan1983.sendMessage(msg.to, str(data["answer"])) 
                    except Exception as error:
                        pass
                    
@@ -3077,7 +3077,7 @@ def bot(op):
                            translator = Translator()
                            hasil = translator.translate(kata, dest='en')
                            A = hasil.text
-                           boy.sendMessage(msg.to, A)
+                           ptatan1983.sendMessage(msg.to, A)
                    except Exception as error:
                        pass                           
                            
@@ -3088,7 +3088,7 @@ def bot(op):
                            translator = Translator()
                            hasil = translator.translate(kata, dest='id')
                            A = hasil.text
-                           boy.sendMessage(msg.to, A)
+                           ptatan1983.sendMessage(msg.to, A)
                    except Exception as error:
                        pass 
                    
@@ -3099,7 +3099,7 @@ def bot(op):
                            translator = Translator()
                            hasil = translator.translate(kata, dest='th')
                            A = hasil.text
-                           boy.sendMessage(msg.to, A)
+                           ptatan1983.sendMessage(msg.to, A)
                    except Exception as error:
                        pass
                    
@@ -3110,7 +3110,7 @@ def bot(op):
                            translator = Translator()
                            hasil = translator.translate(kata, dest='zh-tw')
                            A = hasil.text
-                           boy.sendMessage(msg.to, A)
+                           ptatan1983.sendMessage(msg.to, A)
                    except Exception as error:
                        pass 
                    
@@ -3121,7 +3121,7 @@ def bot(op):
                            translator = Translator()
                            hasil = translator.translate(kata, dest='ar')
                            A = hasil.text
-                           boy.sendMessage(msg.to, A)
+                           ptatan1983.sendMessage(msg.to, A)
                    except Exception as error:
                        pass                    
 
@@ -3143,16 +3143,16 @@ def bot(op):
                  if wait["detectMention"] == True:
                    tz = pytz.timezone("Asia/Jakarta")
                    timeNow = datetime.now(tz=tz)
-                   contact = boy.getContact(msg._from)
+                   contact = ptatan1983.getContact(msg._from)
                    image = "http://dl.profile.line-cdn.net/" + contact.pictureStatus
                    name = re.findall(r'@(\w+)', msg.text)
                    mention = ast.literal_eval(msg.contentMetadata['MENTION'])
                    mentionees = mention['MENTIONEES']
                    for mention in mentionees:
                         if mention ['M'] in Bots:
-                           boy.sendMessage(msg.to, wait["Respontag"])
-                           boy.sendImageWithURL(msg.to,image)
-                           boy.sendMessage(msg.to, None, contentMetadata={"STKID":"51626504","STKPKGID":"11538","STKVER":"1"}, contentType=7)
+                           ptatan1983.sendMessage(msg.to, wait["Respontag"])
+                           ptatan1983.sendImageWithURL(msg.to,image)
+                           ptatan1983.sendMessage(msg.to, None, contentMetadata={"STKID":"51626504","STKPKGID":"11538","STKVER":"1"}, contentType=7)
                            break
                if 'MENTION' in msg.contentMetadata.keys() != None:
                  if wait["Mentiongift"] == True:
@@ -3166,8 +3166,8 @@ def bot(op):
                            plihth = random.choice(idth)
                            jenis = ["5","6","7","8"]
                            plihjenis = random.choice(jenis)
-                           boy.sendMessage(msg.to, "Yang suka ngetag minta di gift yaa!?\nCek di chat, udah aku gift tuh...")
-                           boy.sendMessage(msg._from, None, contentMetadata={"PRDID":plihth,"PRDTYPE":"THEME","MSGTPL":plihjenis}, contentType=9)
+                           ptatan1983.sendMessage(msg.to, "Yang suka ngetag minta di gift yaa!?\nCek di chat, udah aku gift tuh...")
+                           ptatan1983.sendMessage(msg._from, None, contentMetadata={"PRDID":plihth,"PRDTYPE":"THEME","MSGTPL":plihjenis}, contentType=9)
                            break                       
                if 'MENTION' in msg.contentMetadata.keys() != None:
                  if wait["Mentionkick"] == True:
@@ -3176,23 +3176,23 @@ def bot(op):
                    mentionees = mention['MENTIONEES']
                    for mention in mentionees:
                         if mention ['M'] in Bots:
-                           boy.sendMessage(msg.to, "Jangan tag saya....")
-                           boy.kickoutFromGroup(msg.to, [msg._from])
+                           ptatan1983.sendMessage(msg.to, "Jangan tag saya....")
+                           ptatan1983.kickoutFromGroup(msg.to, [msg._from])
                            break
                if msg.contentType == 7:
                  if wait["sticker"] == True:
                     msg.contentType = 0
-                    boy.sendMessage(msg.to,"「Cek ID Sticker」\n🐚 STKID : " + msg.contentMetadata["STKID"] + "\n⏩ STKPKGID : " + msg.contentMetadata["STKPKGID"] + "\n⏩ STKVER : " + msg.contentMetadata["STKVER"]+ "\n\n「Link Sticker」" + "\nline://shop/detail/" + msg.contentMetadata["STKPKGID"])
+                    ptatan1983.sendMessage(msg.to,"「Cek ID Sticker」\n🐚 STKID : " + msg.contentMetadata["STKID"] + "\n⏩ STKPKGID : " + msg.contentMetadata["STKPKGID"] + "\n⏩ STKVER : " + msg.contentMetadata["STKVER"]+ "\n\n「Link Sticker」" + "\nline://shop/detail/" + msg.contentMetadata["STKPKGID"])
                if msg.contentType == 13:
                  if wait["contact"] == True:
                     msg.contentType = 0
-                    boy.sendMessage(msg.to,msg.contentMetadata["mid"])
+                    ptatan1983.sendMessage(msg.to,msg.contentMetadata["mid"])
                     if 'displayName' in msg.contentMetadata:
-                        contact = boy.getContact(msg.contentMetadata["mid"])
-                        path = boy.getContact(msg.contentMetadata["mid"]).picturePath
+                        contact = ptatan1983.getContact(msg.contentMetadata["mid"])
+                        path = ptatan1983.getContact(msg.contentMetadata["mid"]).picturePath
                         image = 'http://dl.profile.line.naver.jp'+path
-                        boy.sendMessage(msg.to,"🤖 Nama : " + msg.contentMetadata["displayName"] + "\n🤖 MID : " + msg.contentMetadata["mid"] + "\n🤖 Status : " + contact.statusMessage + "\n🤖 Picture URL : http://dl.profile.line-cdn.net/" + contact.pictureStatus)
-                        boy.sendImageWithURL(msg.to, image)
+                        ptatan1983.sendMessage(msg.to,"🤖 Nama : " + msg.contentMetadata["displayName"] + "\n🤖 MID : " + msg.contentMetadata["mid"] + "\n🤖 Status : " + contact.statusMessage + "\n🤖 Picture URL : http://dl.profile.line-cdn.net/" + contact.pictureStatus)
+                        ptatan1983.sendImageWithURL(msg.to, image)
 
 
         if op.type == 25 or op.type == 26:
@@ -3205,7 +3205,7 @@ def bot(op):
                 msg_dict[msg.id] = {"text":msg.text,"from":msg._from,"createdTime":msg.createdTime}
                 
             if msg.contentType == 1:
-                    path = boy.downloadObjectMsg(msg_id)
+                    path = ptatan1983.downloadObjectMsg(msg_id)
                     msg_dict[msg.id] = {"text":'Gambarnya dibawah',"data":path,"from":msg._from,"createdTime":msg.createdTime}
             if msg.contentType == 7:
                    stk_id = msg.contentMetadata["STKID"]
