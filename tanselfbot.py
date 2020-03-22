@@ -3236,7 +3236,7 @@ def bot(op):
                if msg.contentType == 13:
                  if wait["contact"] == True:
                     msg.contentType = 0
-                    boy.sendMessage(msg.to,msg.contentMetadata["mid"])
+                    ptatan1983.sendMessage(msg.to,msg.contentMetadata["mid"])
                     if 'displayName' in msg.contentMetadata:
                         contact = ptatan1983.getContact(msg.contentMetadata["mid"])
                         path = ptatan1983.getContact(msg.contentMetadata["mid"]).picturePath
@@ -3283,53 +3283,53 @@ def bot(op):
                  if msg._from in admin:
                   if wait["addadmin"] == True:
                     if msg.contentMetadata["mid"] in admin:
-                        boy.sendMessage(msg.to,"Contact itu sudah jadi admin")
+                        ptatan1983.sendMessage(msg.to,"Contact itu sudah jadi admin")
                         wait["addadmin"] = True
                     else:
                         admin.append(msg.contentMetadata["mid"])
                         wait["addadmin"] = True
-                        boy.sendMessage(msg.to,"Berhasil menambahkan ke admin")
+                        ptatan1983.sendMessage(msg.to,"Berhasil menambahkan ke admin")
                  if wait["delladmin"] == True:
                     if msg.contentMetadata["mid"] in admin:
                         admin.remove(msg.contentMetadata["mid"])
-                        boy.sendMessage(msg.to,"Berhasil menghapus dari admin")
+                        ptatan1983.sendMessage(msg.to,"Berhasil menghapus dari admin")
                     else:
                         wait["delladmin"] = True
-                        boy.sendMessage(msg.to,"Contact itu bukan admin")
+                        ptatan1983.sendMessage(msg.to,"Contact itu bukan admin")
 #===========ADD BLACKLIST============#
                  if msg._from in admin:
                   if wait["wblacklist"] == True:
                     if msg.contentMetadata["mid"] in wait["blacklist"]:
-                        boy.sendMessage(msg.to,"Contact itu sudah ada di blacklist")
+                        ptatan1983.sendMessage(msg.to,"Contact itu sudah ada di blacklist")
                         wait["wblacklist"] = True
                     else:
                         wait["blacklist"][msg.contentMetadata["mid"]] = True
                         wait["wblacklist"] = True
-                        boy.sendMessage(msg.to,"Berhasil menambahkan ke blacklist user")
+                        ptatan1983.sendMessage(msg.to,"Berhasil menambahkan ke blacklist user")
                   if wait["dblacklist"] == True:
                     if msg.contentMetadata["mid"] in wait["blacklist"]:
                         del wait["blacklist"][msg.contentMetadata["mid"]]
-                        boy.sendMessage(msg.to,"Berhasil menghapus dari blacklist user")
+                        ptatan1983.sendMessage(msg.to,"Berhasil menghapus dari blacklist user")
                     else:
                         wait["dblacklist"] = True
-                        boy.sendMessage(msg.to,"Contact itu tidak ada di blacklist")
+                        ptatan1983.sendMessage(msg.to,"Contact itu tidak ada di blacklist")
 #===========TALKBAN============#
                  if msg._from in admin:
                   if wait["Talkwblacklist"] == True:
                     if msg.contentMetadata["mid"] in wait["Talkblacklist"]:
-                        boy.sendMessage(msg.to,"Contact itu sudah ada di Talkban")
+                        ptatan1983.sendMessage(msg.to,"Contact itu sudah ada di Talkban")
                         wait["Talkwblacklist"] = True
                     else:
                         wait["Talkblacklist"][msg.contentMetadata["mid"]] = True
                         wait["Talkwblacklist"] = True
-                        boy.sendMessage(msg.to,"Berhasil menambahkan ke Talkban user")
+                        ptatan1983.sendMessage(msg.to,"Berhasil menambahkan ke Talkban user")
                   if wait["Talkdblacklist"] == True:
                     if msg.contentMetadata["mid"] in wait["Talkblacklist"]:
                         del wait["Talkblacklist"][msg.contentMetadata["mid"]]
-                        boy.sendMessage(msg.to,"Berhasil menghapus dari Talkban user")
+                        ptatan1983.sendMessage(msg.to,"Berhasil menghapus dari Talkban user")
                     else:
                         wait["Talkdblacklist"] = True
-                        boy.sendMessage(msg.to,"Contact itu tidak ada di Talkban")
+                        ptatan1983.sendMessage(msg.to,"Contact itu tidak ada di Talkban")
 
 
 #===========UPDATE FOTO============#
@@ -3344,7 +3344,7 @@ def bot(op):
                             path = os.path.join(os.path.dirname(__file__), 'dataPhotos/%s.jpg' % Setmain["Img"])
                             with open(path, 'wb') as fp:
                                 shutil.copyfileobj(r.raw, fp)
-                            boy.sendMessage(msg.to, "Berhasil menambahkan gambar")
+                            ptatan1983.sendMessage(msg.to, "Berhasil menambahkan gambar")
                         Setmain["Img"] = {}
                         Setmain["Addimage"] = False
 
@@ -3353,16 +3353,16 @@ def bot(op):
                    if settings["groupPicture"] == True:
                      path = boy.downloadObjectMsg(msg_id)
                      settings["groupPicture"] = False
-                     boy.updateGroupPicture(msg.to, path)
-                     boy.sendMessage(msg.to, "Berhasil mengubah foto group")
+                     ptatan1983.updateGroupPicture(msg.to, path)
+                     ptatan1983.sendMessage(msg.to, "Berhasil mengubah foto group")
 
                if msg.contentType == 1:
                    if msg._from in admin:
                        if mid in Setmain["AFfoto"]:
                             path = boy.downloadObjectMsg(msg_id)
                             del Setmain["AFfoto"][mid]
-                            boy.updateProfilePicture(path)
-                            boy.sendMessage(msg.to,"Foto berhasil dirubah")
+                            ptatan1983.updateProfilePicture(path)
+                            ptatan1983.sendMessage(msg.to,"Foto berhasil dirubah")
 
                if msg.contentType == 1:
                  if msg._from in admin:
@@ -3462,7 +3462,7 @@ def bot(op):
 
                if msg.contentType == 0:
                     if Setmain["autoRead"] == True:
-                        boy.sendChatChecked(msg.to, msg_id)
+                        ptatan1983.sendChatChecked(msg.to, msg_id)
                         k1.sendChatChecked(msg.to, msg_id)
                         k2.sendChatChecked(msg.to, msg_id)
                         k3.sendChatChecked(msg.to, msg_id)
@@ -3482,51 +3482,51 @@ def bot(op):
                           if wait["selfbot"] == True:
                             if msg._from in admin:
                                helpMessage = help()
-                               boy.sendMessage(msg.to,str(helpMessage))
+                               ptatan1983.sendMessage(msg.to,str(helpMessage))
                                
                         if cmd == "self on":
                             if msg._from in admin:
                                 wait["selfbot"] = True
-                                boy.sendMessage(msg.to, "Selfbot diaktifkan")
+                                ptatan1983.sendMessage(msg.to, "Selfbot diaktifkan")
                                 
                         elif cmd == "self off":
                             if msg._from in admin:
                                 wait["selfbot"] = False
-                                boy.sendMessage(msg.to, "Selfbot dinonaktifkan")
+                                ptatan1983.sendMessage(msg.to, "Selfbot dinonaktifkan")
 
                         elif cmd == "help2":
                           if wait["selfbot"] == True:
                             if msg._from in admin:
                                helpMessage2 = help2()
-                               boy.sendMessage(msg.to, str(helpMessage2))
+                               ptatan1983.sendMessage(msg.to, str(helpMessage2))
                                          
                         elif cmd == "help3":
                           if wait["selfbot"] == True:
                             if msg._from in admin:
                                helpMessage3 = helpbot()
-                               boy.sendMessage(msg.to, str(helpMessage3))
+                               ptatan1983.sendMessage(msg.to, str(helpMessage3))
 
                         elif cmd == "help4":
                           if wait["selfbot"] == True:
                             if msg._from in admin:
                                helpMessage1 = help1()
-                               boy.sendMessage(msg.to, str(helpMessage1))
+                               ptatan1983.sendMessage(msg.to, str(helpMessage1))
                                
                         elif cmd == "meme":
                           if wait["selfbot"] == True:
                             if msg._from in admin:
                                helpMessage4 = infomeme()
-                               boy.sendMessage(msg.to, str(helpMessage4))
+                               ptatan1983.sendMessage(msg.to, str(helpMessage4))
                                
                         if cmd == "unsend on":
                             if msg._from in admin:
                                 wait["unsend"] = True
-                                boy.sendMessage(msg.to, "Deteksi Unsend Diaktifkan")
+                                ptatan1983.sendMessage(msg.to, "Deteksi Unsend Diaktifkan")
                                 
                         if cmd == "unsend off":
                             if msg._from in admin:
                                 wait["unsend"] = False
-                                boy.sendMessage(msg.to, "Deteksi Unsend Dinonaktifkan")                                
+                                ptatan1983.sendMessage(msg.to, "Deteksi Unsend Dinonaktifkan")                                
 
                         elif cmd == "status":
                           if wait["selfbot"] == True:
@@ -3576,7 +3576,7 @@ def bot(op):
                                 else: md+="┃┃🐚 ✖ Blockjs「OFF」\n"
                                 if msg.to in ghost: md+="┃┃🐚 ✔️ Ghost「ON」\n"
                                 else: md+="┃┃🐚 ✖ Ghost「OFF」\n"                                                
-                                boy.sendMessage(msg.to, md+"┃┣━━━━━━━━━━━━\n┃┃🤖 Tanggal : "+ datetime.strftime(timeNow,'%Y-%m-%d')+"\n┃┃🤖 Jam [ "+ datetime.strftime(timeNow,'%H:%M:%S')+" ]\n┗━━━━━━━━━━━━")
+                                ptatan1983.sendMessage(msg.to, md+"┃┣━━━━━━━━━━━━\n┃┃🤖 Tanggal : "+ datetime.strftime(timeNow,'%Y-%m-%d')+"\n┃┃🤖 Jam [ "+ datetime.strftime(timeNow,'%H:%M:%S')+" ]\n┗━━━━━━━━━━━━")
                                 
                         elif cmd == "status translate":
                           if wait["selfbot"] == True:
@@ -3594,21 +3594,21 @@ def bot(op):
                                 else: md+="┃┃🐚 ✖ Taiwan「OFF」\n"
                                 if msg.to in translatear: md+="┃┃🐚 ✔️ Arab「ON」\n"
                                 else: md+="┃┃🐚 ✖ Arab「OFF」\n"       
-                                boy.sendMessage(msg.to, md+"┃┣━━━━━━━━━━━━\n┃┃🤖 Tanggal : "+ datetime.strftime(timeNow,'%Y-%m-%d')+"\n┃┃🤖 Jam [ "+ datetime.strftime(timeNow,'%H:%M:%S')+" ]\n┗━━━━━━━━━━━━")
+                                ptatan1983.sendMessage(msg.to, md+"┃┣━━━━━━━━━━━━\n┃┃🤖 Tanggal : "+ datetime.strftime(timeNow,'%Y-%m-%d')+"\n┃┃🤖 Jam [ "+ datetime.strftime(timeNow,'%H:%M:%S')+" ]\n┗━━━━━━━━━━━━")
                                 
                         elif cmd == "creator" or text.lower() == 'creator':
                             if msg._from in admin:
-                                boy.sendMessage(msg.to,"「 SELFBOT-BY:MAX 11 Assist 」") 
+                                ptatan1983.sendMessage(msg.to,"「 SELFBOT-BY:MAX 11 Assist 」") 
                                 ma = ""
                                 for i in creator:
-                                    ma = boy.getContact(i)
-                                    boy.sendMessage(msg.to, None, contentMetadata={'mid': i}, contentType=13)
+                                    ma = ptatan1983.getContact(i)
+                                    ptatan1983.sendMessage(msg.to, None, contentMetadata={'mid': i}, contentType=13)
 
                         elif cmd == "about" or cmd == "informasi":
                           if wait["selfbot"] == True:
                             if msg._from in admin:
                                sendMention(msg.to, sender, "「 SELFBOT-BY:MAX 11 Assist 」\n")
-                               boy.sendMessage(msg.to, None, contentMetadata={'mid': mid}, contentType=13)
+                               ptatan1983.sendMessage(msg.to, None, contentMetadata={'mid': mid}, contentType=13)
 
                         elif cmd.startswith('penyewa'):
                           if wait["selfbot"] == True:
@@ -3623,17 +3623,17 @@ def bot(op):
                                 days = (str(future - today))
                                 comma = days.find(",")
                                 days = days[:comma]
-                                contact = boy.getContact(mid)
-                                favoritelist = boy.getFavoriteMids()
-                                grouplist = boy.getGroupIdsJoined()
-                                contactlist = boy.getAllContactIds()
-                                blockedlist = boy.getBlockedContactIds()
+                                contact = ptatan1983.getContact(mid)
+                                favoritelist = ptatan1983.getFavoriteMids()
+                                grouplist = ptatan1983.getGroupIdsJoined()
+                                contactlist = ptatan1983.getAllContactIds()
+                                blockedlist = ptatan1983.getBlockedContactIds()
                                 eltime = time.time() - mulai
                                 bot = runtime(eltime)
                                 start = time.time()
                                 sw.sendText("u83211e3b69096f869d545aed2d1724d3", '.')
                                 elapsed_time = time.time() - start
-                                ryan = boy.getContact(mid)
+                                ryan = ptatan1983.getContact(mid)
                                 zx = ""
                                 zxc = ""
                                 zx2 = []
@@ -3656,89 +3656,89 @@ def bot(op):
                                 zx2.append(zx)
                                 zxc += pesan2
                                 text = xpesan + zxc + ret_ + ""
-                                boy.sendMessage(to, text, contentMetadata={'MENTION':str('{"MENTIONEES":'+json.dumps(zx2).replace(' ','')+'}')}, contentType=0)
-                                boy.sendContact(to, "u054c3692f90083a5b1ad23e4a663f676")
+                                ptatan1983.sendMessage(to, text, contentMetadata={'MENTION':str('{"MENTIONEES":'+json.dumps(zx2).replace(' ','')+'}')}, contentType=0)
+                                ptatan1983.sendContact(to, "u054c3692f90083a5b1ad23e4a663f676")
                             except Exception as e:
-                                boy.sendMessage(msg.to, str(e))
+                                ptatan1983.sendMessage(msg.to, str(e))
 
                         elif cmd == "me" or text.lower() == 'me':
                           if wait["selfbot"] == True:
                             if msg._from in admin:
                                msg.contentType = 13
                                msg.contentMetadata = {'mid': msg._from}
-                               boy.sendMessage1(msg)
+                               ptatan1983.sendMessage1(msg)
 
                         elif text.lower() == "mid":
                             #if msg._from in admin:
-                               boy.sendMessage(msg.to, msg._from)
+                               ptatan1983.sendMessage(msg.to, msg._from)
 
                         elif ("Mid " in msg.text):
                           if wait["selfbot"] == True:
                             if msg._from in admin:
                                key = eval(msg.contentMetadata["MENTION"])
                                key1 = key["MENTIONEES"][0]["M"]
-                               mi = boy.getContact(key1)
-                               boy.sendMessage(msg.to, "Nama : "+str(mi.displayName)+"\nMID : " +key1)
-                               boy.sendMessage(msg.to, None, contentMetadata={'mid': key1}, contentType=13)
+                               mi = ptatan1983.getContact(key1)
+                               ptatan1983.sendMessage(msg.to, "Nama : "+str(mi.displayName)+"\nMID : " +key1)
+                               ptatan1983.sendMessage(msg.to, None, contentMetadata={'mid': key1}, contentType=13)
 
                         elif ("Info " in msg.text):
                           if wait["selfbot"] == True:
                             if msg._from in admin:
                                key = eval(msg.contentMetadata["MENTION"])
                                key1 = key["MENTIONEES"][0]["M"]
-                               mi = boy.getContact(key1)
-                               boy.sendMessage(msg.to, "❧ Nama : "+str(mi.displayName)+"\n🐚 Mid : " +key1+"\n🐚 Status : "+str(mi.statusMessage))
-                               boy.sendMessage(msg.to, None, contentMetadata={'mid': key1}, contentType=13)
-                               if "videoProfile='{" in str(boy.getContact(key1)):
-                                   boy.sendVideoWithURL(msg.to, 'http://dl.profile.line.naver.jp'+str(mi.picturePath)+'/vp.small')
+                               mi = ptatan1983.getContact(key1)
+                               ptatan1983.sendMessage(msg.to, "❧ Nama : "+str(mi.displayName)+"\n🐚 Mid : " +key1+"\n🐚 Status : "+str(mi.statusMessage))
+                               ptatan1983.sendMessage(msg.to, None, contentMetadata={'mid': key1}, contentType=13)
+                               if "videoProfile='{" in str(ptatan1983.getContact(key1)):
+                                   ptatan1983.sendVideoWithURL(msg.to, 'http://dl.profile.line.naver.jp'+str(mi.picturePath)+'/vp.small')
                                else:
-                                   boy.sendImageWithURL(msg.to, 'http://dl.profile.line.naver.jp'+str(mi.picturePath))
+                                   ptatan1983.sendImageWithURL(msg.to, 'http://dl.profile.line.naver.jp'+str(mi.picturePath))
 
                         elif cmd == "mybot":
                           if wait["selfbot"] == True:
                             if msg._from in admin:
                                msg.contentType = 13
                                msg.contentMetadata = {'mid': mid}
-                               boy.sendMessage1(msg)
+                               ptatan1983.sendMessage1(msg)
                                msg.contentType = 13
                                msg.contentMetadata = {'mid': Amid}
-                               boy.sendMessage1(msg)
+                               ptatan1983.sendMessage1(msg)
                                msg.contentType = 13
                                msg.contentMetadata = {'mid': Bmid}
-                               boy.sendMessage1(msg)
+                               ptatan1983.sendMessage1(msg)
                                msg.contentType = 13
                                msg.contentMetadata = {'mid': Cmid}
-                               boy.sendMessage1(msg)
+                               ptatan1983.sendMessage1(msg)
                                msg.contentType = 13
                                msg.contentMetadata = {'mid': Dmid}
-                               boy.sendMessage1(msg)
+                               ptatan1983.sendMessage1(msg)
                                msg.contentType = 13
                                msg.contentMetadata = {'mid': Emid}
-                               boy.sendMessage1(msg)
+                               ptatan1983.sendMessage1(msg)
                                msg.contentType = 13
                                msg.contentMetadata = {'mid': Fmid}
-                               boy.sendMessage1(msg)
+                               ptatan1983.sendMessage1(msg)
                                msg.contentType = 13
                                msg.contentMetadata = {'mid': Gmid}
-                               boy.sendMessage1(msg)
+                               ptatan1983.sendMessage1(msg)
                                msg.contentType = 13
                                msg.contentMetadata = {'mid': Hmid}
-                               boy.sendMessage1(msg)
+                               ptatan1983.sendMessage1(msg)
                                msg.contentType = 13
                                msg.contentMetadata = {'mid': Imid}
-                               boy.sendMessage1(msg)
+                               ptatan1983.sendMessage1(msg)
                                msg.contentType = 13
                                msg.contentMetadata = {'mid': Jmid}
-                               boy.sendMessage1(msg)
+                               ptatan1983.sendMessage1(msg)
                                msg.contentType = 13
                                msg.contentMetadata = {'mid': Zmid}
-                               boy.sendMessage1(msg)
+                               ptatan1983.sendMessage1(msg)
 
                         elif text.lower() == "hapus chat":
                           if wait["selfbot"] == True:
                             if msg._from in admin:
                                try:
-                                   boy.removeAllMessages(op.param2)
+                                   ptatan1983.removeAllMessages(op.param2)
                                except:
                                    pass
 
@@ -3765,14 +3765,14 @@ def bot(op):
                             if msg._from in admin:
                                sep = text.split(" ")
                                pesan = text.replace(sep[0] + " ","")
-                               saya = boy.getGroupIdsJoined()
+                               saya = ptatan1983.getGroupIdsJoined()
                                for group in saya:
-                                   boy.sendMessage(group,"=======[BROADCAST]=======\n\n"+pesan+"\n\nCREATOR : line.me/R/ti/p/~maxbotline")
+                                   ptatan1983.sendMessage(group,"=======[BROADCAST]=======\n\n"+pesan+"\n\nCREATOR : line.me/R/ti/p/~maxbotline")
 
                         elif text.lower() == "mykey":
                           if wait["selfbot"] == True:
                             if msg._from in admin:
-                               boy.sendMessage(msg.to, "「Mykey」\nSetkey bot mu「 " + str(Setmain["keyCommand"]) + " 」")
+                               ptatan1983.sendMessage(msg.to, "「Mykey」\nSetkey bot mu「 " + str(Setmain["keyCommand"]) + " 」")
                                
                         elif cmd.startswith("setkey "):
                           if wait["selfbot"] == True:
@@ -3780,16 +3780,16 @@ def bot(op):
                                sep = text.split(" ")
                                key = text.replace(sep[0] + " ","")
                                if key in [""," ","\n",None]:
-                                   boy.sendMessage(msg.to, "Gagal mengganti key")
+                                   ptatan1983.sendMessage(msg.to, "Gagal mengganti key")
                                else:
                                    Setmain["keyCommand"] = str(key).lower()
-                                   boy.sendMessage(msg.to, "「Setkey」\nSetkey diganti jadi「{}」".format(str(key).lower()))
+                                   ptatan1983.sendMessage(msg.to, "「Setkey」\nSetkey diganti jadi「{}」".format(str(key).lower()))
 
                         elif text.lower() == "resetkey":
                           if wait["selfbot"] == True:
                             if msg._from in admin:
                                Setmain["keyCommand"] = ""
-                               boy.sendMessage(msg.to, "「Setkey」\nSetkey mu kembali ke awal")
+                               ptatan1983.sendMessage(msg.to, "「Setkey」\nSetkey mu kembali ke awal")
 
                         elif cmd == "restart":
                           if wait["selfbot"] == True:
@@ -3803,12 +3803,12 @@ def bot(op):
                             if msg._from in admin:
                                eltime = time.time() - mulai
                                bot = "Aktif " +waktu(eltime)
-                               boy.sendMessage(msg.to,bot)
+                               ptatan1983.sendMessage(msg.to,bot)
                                
                         elif cmd == "ginfo":
                           if msg._from in admin:
                             try:
-                                G = boy.getGroup(msg.to)
+                                G = ptatan1983.getGroup(msg.to)
                                 if G.invitee is None:
                                     gPending = "0"
                                 else:
@@ -3818,24 +3818,24 @@ def bot(op):
                                     gTicket = "Tidak ada"
                                 else:
                                     gQr = "Terbuka"
-                                    gTicket = "https://line.me/R/ti/g/{}".format(str(boy.reissueGroupTicket(G.id)))
+                                    gTicket = "https://line.me/R/ti/g/{}".format(str(ptatan1983.reissueGroupTicket(G.id)))
                                 timeCreated = []
                                 timeCreated.append(time.strftime("%d-%m-%Y [ %H:%M:%S ]", time.localtime(int(G.createdTime) / 1000)))
-                                boy.sendMessage(msg.to, "❂➣ BOT Grup Info\n\n❂➣ Nama Group : {}".format(G.name)+ "\n❂➣ ID Group : {}".format(G.id)+ "\n❂➣ Pembuat : {}".format(G.creator.displayName)+ "\n❂➣ Waktu Dibuat : {}".format(str(timeCreated))+ "\n❂➣ Jumlah Member : {}".format(str(len(G.members)))+ "\n❂➣ Jumlah Pending : {}".format(gPending)+ "\n❂➣ Group Qr : {}".format(gQr)+ "\n❂➣ Group Ticket : {}".format(gTicket))
-                                boy.sendMessage(msg.to, None, contentMetadata={'mid': G.creator.mid}, contentType=13)
-                                boy.sendImageWithURL(msg.to, 'http://dl.profile.line-cdn.net/'+G.pictureStatus)
+                                ptatan1983.sendMessage(msg.to, "❂➣ BOT Grup Info\n\n❂➣ Nama Group : {}".format(G.name)+ "\n❂➣ ID Group : {}".format(G.id)+ "\n❂➣ Pembuat : {}".format(G.creator.displayName)+ "\n❂➣ Waktu Dibuat : {}".format(str(timeCreated))+ "\n❂➣ Jumlah Member : {}".format(str(len(G.members)))+ "\n❂➣ Jumlah Pending : {}".format(gPending)+ "\n❂➣ Group Qr : {}".format(gQr)+ "\n❂➣ Group Ticket : {}".format(gTicket))
+                                ptatan1983.sendMessage(msg.to, None, contentMetadata={'mid': G.creator.mid}, contentType=13)
+                                ptatan1983.sendImageWithURL(msg.to, 'http://dl.profile.line-cdn.net/'+G.pictureStatus)
                             except Exception as e:
-                                boy.sendMessage(msg.to, str(e))
+                                ptatan1983.sendMessage(msg.to, str(e))
 
                         elif cmd.startswith("infogrup "):
                           if msg._from in admin:
                             separate = text.split(" ")
                             number = text.replace(separate[0] + " ","")
-                            groups = boy.getGroupIdsJoined()
+                            groups = ptatan1983.getGroupIdsJoined()
                             ret_ = ""
                             try:
                                 group = groups[int(number)-1]
-                                G = boy.getGroup(group)
+                                G = ptatan1983.getGroup(group)
                                 try:
                                     gCreator = G.creator.displayName
                                 except:
@@ -3862,7 +3862,7 @@ def bot(op):
                                 ret_ += "\n❂➣ Qr : {}".format(gQr)
                                 ret_ += "\n❂➣ Ticket : {}".format(gTicket)
                                 ret_ += ""
-                                boy.sendMessage(to, str(ret_))
+                                ptatan1983.sendMessage(to, str(ret_))
                             except:
                                 pass
 
@@ -3870,17 +3870,17 @@ def bot(op):
                           if msg._from in admin:
                             separate = msg.text.split(" ")
                             number = msg.text.replace(separate[0] + " ","")
-                            groups = boy.getGroupIdsJoined()
+                            groups = ptatan1983.getGroupIdsJoined()
                             ret_ = ""
                             try:
                                 group = groups[int(number)-1]
-                                G = boy.getGroup(group)
+                                G = ptatan1983.getGroup(group)
                                 no = 0
                                 ret_ = ""
                                 for mem in G.members:
                                     no += 1
                                     ret_ += "\n " "❂➣ "+ str(no) + ". " + mem.displayName
-                                boy.sendMessage(to,"❂➣ Group Name : [ " + str(G.name) + " ]\n\n   [ List Member ]\n" + ret_ + "\n\n「Total %i Members」" % len(G.members))
+                                ptatan1983.sendMessage(to,"❂➣ Group Name : [ " + str(G.name) + " ]\n\n   [ List Member ]\n" + ret_ + "\n\n「Total %i Members」" % len(G.members))
                             except: 
                                 pass
 
@@ -3888,10 +3888,10 @@ def bot(op):
                           if msg._from in admin:
                             separate = msg.text.split(" ")
                             number = msg.text.replace(separate[0] + " ","")
-                            groups = boy.getGroupIdsJoined()
+                            groups = ptatan1983.getGroupIdsJoined()
                             group = groups[int(number)-1]
                             for i in group:
-                                ginfo = boy.getGroup(i)
+                                ginfo = ptatan1983.getGroup(i)
                                 if ginfo == group:
                                     k1.leaveGroup(i)
                                     k2.leaveGroup(i)
@@ -3903,33 +3903,33 @@ def bot(op):
                                     k8.leaveGroup(i)
                                     k9.leaveGroup(i)
                                     k10.leaveGroup(i)
-                                    boy.sendMessage(msg.to,"Berhasil keluar di grup " +str(ginfo.name))
+                                    ptatan1983.sendMessage(msg.to,"Berhasil keluar di grup " +str(ginfo.name))
 
                         elif cmd == "friendlist":
                           if wait["selfbot"] == True:
                             if msg._from in admin:
                                ma = ""
                                a = 0
-                               gid = boy.getAllContactIds()
+                               gid = ptatan1983.getAllContactIds()
                                for i in gid:
-                                   G = boy.getContact(i)
+                                   G = ptatan1983.getContact(i)
                                    a = a + 1
                                    end = "\n"
                                    ma += "┃┃ " + str(a) + ". " +G.displayName+ "\n"
-                               boy.sendMessage(msg.to,"┏━━[ FRIEND LIST ]\n┃┃\n"+ma+"┃┃\n┗━━[ Total「"+str(len(gid))+"」Friends ]")
+                               ptatan1983.sendMessage(msg.to,"┏━━[ FRIEND LIST ]\n┃┃\n"+ma+"┃┃\n┗━━[ Total「"+str(len(gid))+"」Friends ]")
 
                         elif cmd == "gruplist":
                           if wait["selfbot"] == True:
                             if msg._from in admin:
                                ma = ""
                                a = 0
-                               gid = boy.getGroupIdsJoined()
+                               gid = ptatan1983.getGroupIdsJoined()
                                for i in gid:
-                                   G = boy.getGroup(i)
+                                   G = ptatan1983.getGroup(i)
                                    a = a + 1
                                    end = "\n"
                                    ma += "┃┃ " + str(a) + ". " +G.name+ "\n"
-                               boy.sendMessage(msg.to,"┏━━[ GROUP LIST ]\n┃┃\n"+ma+"┃┃\n┗━━[ Total「"+str(len(gid))+"」Groups ]")
+                               ptatan1983.sendMessage(msg.to,"┏━━[ GROUP LIST ]\n┃┃\n"+ma+"┃┃\n┗━━[ Total「"+str(len(gid))+"」Groups ]")
 
                         elif cmd == "gruplist1":
                             if msg._from in admin:
@@ -3977,13 +3977,13 @@ def bot(op):
                         elif cmd == "reject":
                           if wait["selfbot"] == True:
                             if msg._from in creator:
-                              ginvited = boy.getGroupIdsInvited()
+                              ginvited = ptatan1983.getGroupIdsInvited()
                               if ginvited != [] and ginvited != None:
                                   for gid in ginvited:
-                                      boy.rejectGroupInvitation(gid)
-                                  boy.sendMessage(to, "Berhasil tolak sebanyak {} undangan grup".format(str(len(ginvited))))
+                                      ptatan1983.rejectGroupInvitation(gid)
+                                  ptatan1983.sendMessage(to, "Berhasil tolak sebanyak {} undangan grup".format(str(len(ginvited))))
                               else:
-                                  boy.sendMessage(to, "Tidak ada undangan yang tertunda")
+                                  ptatan1983.sendMessage(to, "Tidak ada undangan yang tertunda")
 
 #===========BOT UPDATE============#
                         elif cmd == "updategrup":
