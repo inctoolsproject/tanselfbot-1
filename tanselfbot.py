@@ -842,12 +842,12 @@ def bot(op):
             if mid in op.param3:
                 if wait["autoLeave"] == True:
                     if op.param2 not in Bots and op.param2 not in owner and op.param2 not in admin and op.param2 not in staff:
-                        boy.acceptGroupInvitation(op.param1)
+                        ptatan1983.acceptGroupInvitation(op.param1)
                         ginfo = ptatan1983.getGroup(op.param1)
                         ptatan1983.sendMessage(op.param1,"Selamat Tinggal\n Group " +str(ginfo.name))
                         ptatan1983.leaveGroup(op.param1)
                     else:
-                        boy.acceptGroupInvitation(op.param1)
+                        ptatan1983.acceptGroupInvitation(op.param1)
                         ginfo = ptatan1983.getGroup(op.param1)
                         ptatan1983.sendMessage(op.param1,"Hai " + str(ginfo.name))
                         
@@ -1263,11 +1263,11 @@ def bot(op):
             if op.param1 in welcome:
                 if op.param2 in Bots:
                     pass
-                ginfo = boy.getGroup(op.param1)
-                contact = boy.getContact(op.param2)
+                ginfo = ptatan1983.getGroup(op.param1)
+                contact = ptatan1983.getContact(op.param2)
                 image = "http://dl.profile.line-cdn.net/" + contact.pictureStatus
                 welcomeMembers(op.param1, [op.param2])
-                boy.sendImageWithURL(op.param1, image)
+                ptatan1983.sendImageWithURL(op.param1, image)
 
         if op.type == 17:
             if op.param1 in protectjoin:
