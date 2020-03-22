@@ -5178,7 +5178,7 @@ def bot(op):
                                        translatear.append(msg.to)
                                        ginfo = ptatan1983.getGroup(msg.to)
                                        msgs = "Auto Translate Diaktifkan\nDi Group : " +str(ginfo.name)
-                                  boy.sendMessage(msg.to, "「Diaktifkan」\n" + msgs)
+                                  ptatan1983.sendMessage(msg.to, "「Diaktifkan」\n" + msgs)
                               elif spl == 'off':
                                     if msg.to in translatear:
                                          translatear.remove(msg.to)
@@ -5735,79 +5735,79 @@ def bot(op):
                           if wait["selfbot"] == True:
                             if msg._from in admin:
                                 wait["detectMention"] = False
-                                boy.sendMessage(msg.to,"Auto respon dinonaktifkan")
+                                ptatan1983.sendMessage(msg.to,"Auto respon dinonaktifkan")
                                 
                         elif cmd == "respongift on" or text.lower() == 'respongift on':
                           if wait["selfbot"] == True:
                             if msg._from in admin:
                                 wait["Mentiongift"] = True
-                                boy.sendMessage(msg.to,"Auto respon gift diaktifkan")
+                                ptatan1983.sendMessage(msg.to,"Auto respon gift diaktifkan")
 
                         elif cmd == "respongift off" or text.lower() == 'respongift off':
                           if wait["selfbot"] == True:
                             if msg._from in admin:
                                 wait["Mentiongift"] = False
-                                boy.sendMessage(msg.to,"Auto respon gift dinonaktifkan")                                
+                                ptatan1983.sendMessage(msg.to,"Auto respon gift dinonaktifkan")                                
 
                         elif cmd == "autojoin on" or text.lower() == 'autojoin on':
                           if wait["selfbot"] == True:
                             if msg._from in admin:
                                 wait["autoJoin"] = True
-                                boy.sendMessage(msg.to,"Autojoin diaktifkan")
+                                ptatan1983.sendMessage(msg.to,"Autojoin diaktifkan")
 
                         elif cmd == "autojoin off" or text.lower() == 'autojoin off':
                           if wait["selfbot"] == True:
                             if msg._from in admin:
                                 wait["autoJoin"] = False
-                                boy.sendMessage(msg.to,"Autojoin dinonaktifkan")
+                                ptatan1983.sendMessage(msg.to,"Autojoin dinonaktifkan")
 
                         elif cmd == "autoleave on" or text.lower() == 'autoleave on':
                           if wait["selfbot"] == True:
                             if msg._from in admin:
                                 wait["autoLeave"] = True
-                                boy.sendMessage(msg.to,"Auto Leave Diaktifkan")
+                                ptatan1983.sendMessage(msg.to,"Auto Leave Diaktifkan")
 
                         elif cmd == "autoleave off" or text.lower() == 'autoleave off':
                           if wait["selfbot"] == True:
                             if msg._from in admin:
                                 wait["autoLeave"] = False
-                                boy.sendMessage(msg.to,"Auto Leave Dimatikan")
+                                ptatan1983.sendMessage(msg.to,"Auto Leave Dimatikan")
 
                         elif cmd == "autoadd on" or text.lower() == 'autoadd on':
                           if wait["selfbot"] == True:
                             if msg._from in admin:
                                 wait["autoAdd"] = True
-                                boy.sendMessage(msg.to,"Auto Add Diaktifkan")
+                                ptatan1983.sendMessage(msg.to,"Auto Add Diaktifkan")
 
                         elif cmd == "autoadd off" or text.lower() == 'autoadd off':
                           if wait["selfbot"] == True:
                             if msg._from in admin:
                                 wait["autoAdd"] = False
-                                boy.sendMessage(msg.to,"Auto Add Dimatikan")
+                                ptatan1983.sendMessage(msg.to,"Auto Add Dimatikan")
 
                         elif cmd == "sticker on" or text.lower() == 'sticker on':
                           if wait["selfbot"] == True:
                             if msg._from in admin:
                                 wait["sticker"] = True
-                                boy.sendMessage(msg.to,"Detect Sticker Diaktifkan")
+                                ptatan1983.sendMessage(msg.to,"Detect Sticker Diaktifkan")
 
                         elif cmd == "sticker off" or text.lower() == 'sticker off':
                           if wait["selfbot"] == True:
                             if msg._from in admin:
                                 wait["sticker"] = False
-                                boy.sendMessage(msg.to,"Detect Sticker Dimatikan")
+                                ptatan1983.sendMessage(msg.to,"Detect Sticker Dimatikan")
 
                         elif cmd == "jointicket on" or text.lower() == 'jointicket on':
                           if wait["selfbot"] == True:
                             if msg._from in admin:
                                 settings["autoJoinTicket"] = True
-                                boy.sendMessage(msg.to,"Auto Join Ticket Diaktifkan")
+                                ptatan1983.sendMessage(msg.to,"Auto Join Ticket Diaktifkan")
 
                         elif cmd == "jointicket off" or text.lower() == 'jointicket off':
                           if wait["selfbot"] == True:
                             if msg._from in admin:
                                 settings["autoJoinTicket"] = False
-                                boy.sendMessage(msg.to,"Auto Join Ticket Dimatikan")
+                                ptatan1983.sendMessage(msg.to,"Auto Join Ticket Dimatikan")
 
 #===========COMMAND BLACKLIST============#
                         elif ("Talkban " in msg.text):
@@ -5821,7 +5821,7 @@ def bot(op):
                                for target in targets:
                                        try:
                                            wait["Talkblacklist"][target] = True
-                                           boy.sendMessage(msg.to,"Berhasil menambahkan blacklist")
+                                           ptatan1983.sendMessage(msg.to,"Berhasil menambahkan blacklist")
                                        except:
                                            pass
 
@@ -5836,7 +5836,7 @@ def bot(op):
                                for target in targets:
                                        try:
                                            del wait["Talkblacklist"][target]
-                                           boy.sendMessage(msg.to,"Berhasil menghapus blacklist")
+                                           ptatan1983.sendMessage(msg.to,"Berhasil menghapus blacklist")
                                        except:
                                            pass
 
@@ -5844,13 +5844,13 @@ def bot(op):
                           if wait["selfbot"] == True:
                             if msg._from in admin:
                                 wait["Talkwblacklist"] = True
-                                boy.sendMessage(msg.to,"Kirim kontaknya...")
+                                ptatan1983.sendMessage(msg.to,"Kirim kontaknya...")
 
                         elif cmd == "untalkban:on" or text.lower() == 'untalkban:on':
                           if wait["selfbot"] == True:
                             if msg._from in admin:
                                 wait["Talkdblacklist"] = False
-                                boy.sendMessage(msg.to,"Kirim kontaknya...")
+                                ptatan1983.sendMessage(msg.to,"Kirim kontaknya...")
 
                         elif ("Ban " in msg.text):
                           if wait["selfbot"] == True:
@@ -5863,7 +5863,7 @@ def bot(op):
                                for target in targets:
                                        try:
                                            wait["blacklist"][target] = True
-                                           boy.sendMessage(msg.to,"Berhasil menambahkan blacklist")
+                                           ptatan1983.sendMessage(msg.to,"Berhasil menambahkan blacklist")
                                        except:
                                            pass
 
@@ -5878,7 +5878,7 @@ def bot(op):
                                for target in targets:
                                        try:
                                            del wait["blacklist"][target]
-                                           boy.sendMessage(msg.to,"Berhasil menghapus blacklist")
+                                           ptatan1983.sendMessage(msg.to,"Berhasil menghapus blacklist")
                                        except:
                                            pass
 
@@ -5886,52 +5886,52 @@ def bot(op):
                           if wait["selfbot"] == True:
                             if msg._from in admin:
                                 wait["wblacklist"] = True
-                                boy.sendMessage(msg.to,"Kirim kontaknya...")
+                                ptatan1983.sendMessage(msg.to,"Kirim kontaknya...")
 
                         elif cmd == "unban:on" or text.lower() == 'unban:on':
                           if wait["selfbot"] == True:
                             if msg._from in admin:
                                 wait["dblacklist"] = False
-                                boy.sendMessage(msg.to,"Kirim kontaknya...")
+                                ptatan1983.sendMessage(msg.to,"Kirim kontaknya...")
 
                         elif cmd == "banlist" or text.lower() == 'banlist':
                           if wait["selfbot"] == True:
                             if msg._from in admin:
                               if wait["blacklist"] == {}:
-                                boy.sendMessage(msg.to,"Tidak ada blacklist")
+                                ptatan1983.sendMessage(msg.to,"Tidak ada blacklist")
                               else:
                                 ma = ""
                                 a = 0
                                 for m_id in wait["blacklist"]:
                                     a = a + 1
                                     end = '\n'
-                                    ma += str(a) + ". " +boy.getContact(m_id).displayName + "\n"
-                                boy.sendMessage(msg.to,"🤖 Blacklist User\n\n"+ma+"\nTotal「%s」Blacklist User" %(str(len(wait["blacklist"]))))
+                                    ma += str(a) + ". " +ptatan1983.getContact(m_id).displayName + "\n"
+                                ptatan1983.sendMessage(msg.to,"🤖 Blacklist User\n\n"+ma+"\nTotal「%s」Blacklist User" %(str(len(wait["blacklist"]))))
 
                         elif cmd == "talkbanlist" or text.lower() == 'talkbanlist':
                           if wait["selfbot"] == True:
                             if msg._from in admin:
                               if wait["Talkblacklist"] == {}:
-                                boy.sendMessage(msg.to,"Tidak ada Talkban user")
+                                ptatan1983.sendMessage(msg.to,"Tidak ada Talkban user")
                               else:
                                 ma = ""
                                 a = 0
                                 for m_id in wait["Talkblacklist"]:
                                     a = a + 1
                                     end = '\n'
-                                    ma += str(a) + ". " +boy.getContact(m_id).displayName + "\n"
-                                boy.sendMessage(msg.to,"🤖 Talkban User\n\n"+ma+"\nTotal「%s」Talkban User" %(str(len(wait["Talkblacklist"]))))
+                                    ma += str(a) + ". " +ptatan1983.getContact(m_id).displayName + "\n"
+                                ptatan1983.sendMessage(msg.to,"🤖 Talkban User\n\n"+ma+"\nTotal「%s」Talkban User" %(str(len(wait["Talkblacklist"]))))
 
                         elif cmd == "blc" or text.lower() == 'blc':
                           if wait["selfbot"] == True:
                             if msg._from in admin:
                               if wait["blacklist"] == {}:
-                                    boy.sendMessage(msg.to,"Tidak ada blacklist")
+                                    ptatan1983.sendMessage(msg.to,"Tidak ada blacklist")
                               else:
                                     ma = ""
                                     for i in wait["blacklist"]:
                                         ma = boy.getContact(i)
-                                        boy.sendMessage(msg.to, None, contentMetadata={'mid': i}, contentType=13)
+                                        ptatan1983.sendMessage(msg.to, None, contentMetadata={'mid': i}, contentType=13)
 
                         elif cmd == "clearban" or text.lower() == 'clearban':
                           if wait["selfbot"] == True:
