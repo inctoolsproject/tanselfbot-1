@@ -860,7 +860,7 @@ def bot(op):
                         ptatan1983.sendMessage(op.param1,"Haii " +str(ginfo.name))
                     else:
                         ptatan1983.acceptGroupInvitation(op.param1)
-                        ginfo = boy.getGroup(op.param1)
+                        ginfo = ptatan1983.getGroup(op.param1)
                         ptatan1983.sendMessage(op.param1,"Haii " + str(ginfo.name))
         if op.type == 13:
             if Amid in op.param3:
@@ -985,10 +985,10 @@ def bot(op):
             if op.param1 in protectinvite:
                 if op.param2 not in Bots and op.param2 not in owner and op.param2 not in admin and op.param2 not in staff:
                     try:
-                        group = boy.getGroup(op.param1)
+                        group = ptatan1983.getGroup(op.param1)
                         gMembMids = [contact.mid for contact in group.invitee]
                         for _mid in gMembMids:
-                            boy.cancelGroupInvitation(op.param1,[_mid])
+                            ptatan1983.cancelGroupInvitation(op.param1,[_mid])
                     except:
                         try:
                             group = k1.getGroup(op.param1)
@@ -1070,14 +1070,14 @@ def bot(op):
                 if op.param2 in Bots:
                     k1.findAndAddContactsByMid(op.param3)
                     k1.inviteIntoGroup(op.param1,[op.param3])
-                    boy.acceptGroupInvitation(op.param1)
+                    ptatan1983.acceptGroupInvitation(op.param1)
                 else:
                     wait["blacklist"][op.param2] = True
                     try:
                         k1.findAndAddContactsByMid(op.param3)
                         random.choice(ABC).kickoutFromGroup(op.param1,[op.param2])
                         k1.inviteIntoGroup(op.param1,[op.param3])
-                        boy.acceptGroupInvitation(op.param1)
+                        ptatan1983.acceptGroupInvitation(op.param1)
                     except:
                         pass
             if Amid in op.param3:
@@ -1247,11 +1247,11 @@ def bot(op):
             if op.param1 in welcome:
                 if op.param2 in Bots:
                     pass
-                ginfo = boy.getGroup(op.param1)
-                contact = boy.getContact(op.param2).picturePath
+                ginfo = ptatan1983.getGroup(op.param1)
+                contact = ptatan1983.getContact(op.param2).picturePath
                 image = 'http://dl.profile.line.naver.jp'+contact
                 leaveMembers(op.param1, [op.param2])
-                boy.sendImageWithURL(op.param1, image)
+                ptatan1983.sendImageWithURL(op.param1, image)
 
         if op.type == 17:
             if op.param2 in wait["blacklist"]:
@@ -1345,8 +1345,8 @@ def bot(op):
                     if (wait["message"] in [" "," ","\n",None]):
                         pass
                     else:
-                        boy.sendText(op.param1, wait["message"])
-                        boy.blockContact(op.param1)
+                        ptatan1983.sendText(op.param1, wait["message"])
+                        ptatan1983.blockContact(op.param1)
 #===========KICK============#
         if op.type == 19:
             if op.param1 in protectkick:
@@ -1422,34 +1422,34 @@ def bot(op):
 #--------------------------------------------------------
             if op.param3 in mid:
                             if op.param2 in Amid:
-                                boy.acceptGroupInvitation(op.param1)
+                                ptatan1983.acceptGroupInvitation(op.param1)
             if op.param3 in mid:
 		            if op.param2 in Bmid:
-		                boy.acceptGroupInvitation(op.param1)
+		                ptatan1983.acceptGroupInvitation(op.param1)
             if op.param3 in mid:
 		            if op.param2 in Cmid:
-		                boy.acceptGroupInvitation(op.param1)
+		                ptatan1983.acceptGroupInvitation(op.param1)
             if op.param3 in mid:
 		            if op.param2 in Dmid:
-		                boy.acceptGroupInvitation(op.param1)
+		                ptatan1983.acceptGroupInvitation(op.param1)
             if op.param3 in mid:
 		            if op.param2 in Emid:
-		                boy.acceptGroupInvitation(op.param1)
+		                ptatan1983.acceptGroupInvitation(op.param1)
             if op.param3 in mid:
 		            if op.param2 in Fmid:
-		                boy.acceptGroupInvitation(op.param1)
+		                ptatan1983.acceptGroupInvitation(op.param1)
             if op.param3 in mid:
 		            if op.param2 in Gmid:
-		                boy.acceptGroupInvitation(op.param1)
+		                ptatan1983.acceptGroupInvitation(op.param1)
             if op.param3 in mid:
 		            if op.param2 in Hmid:
-		                boy.acceptGroupInvitation(op.param1)
+		                ptatan1983.acceptGroupInvitation(op.param1)
             if op.param3 in mid:
 		            if op.param2 in Imid:
-		                boy.acceptGroupInvitation(op.param1)
+		                ptatan1983.acceptGroupInvitation(op.param1)
             if op.param3 in mid:
 		            if op.param2 in Jmid:
-		                boy.acceptGroupInvitation(op.param1)
+		                ptatan1983.acceptGroupInvitation(op.param1)
 
 #--------------------------------------------------------
             if op.param3 in Amid:
@@ -1778,7 +1778,7 @@ def bot(op):
                     if wait["Timeline"] == True:
                             ret_ = "「 Detail Postingan 」"
                             if msg.contentMetadata["serviceType"] == "GB":
-                                contact = boy.getContact(sender)
+                                contact = ptatan1983.getContact(sender)
                                 auth = "\n• Penulis : {}".format(str(contact.displayName))
                             else:
                                 auth = "\n• Penulis : {}".format(str(msg.contentMetadata["serviceName"]))
@@ -1807,7 +1807,7 @@ def bot(op):
                                 purl = "\n• Post URL : {}".format(str(msg.contentMetadata["postEndUrl"]).replace("line://","https://line.me/R/"))
                                 ret_ += purl
                                 ret_ += text
-                            boy.sendMessage(to, str(ret_))
+                            ptatan1983.sendMessage(to, str(ret_))
                             channel.like(url[25:58], url[66:], likeType=1006)
                             channel.comment(url[25:58], url[66:], wait["message"])
 
@@ -1840,14 +1840,14 @@ def bot(op):
                         G.prevenJoinByTicket = False
                         sw.updateGroup(G)
                         Ticket = sw.reissueGroupTicket(op.param1)
-                        boy.acceptGroupInvitationByTicket(op.param1,Ticket)
+                        ptatan1983.acceptGroupInvitationByTicket(op.param1,Ticket)
                         sw.kickoutFromGroup(op.param1,[op.param2])
                         G.prevenJoinByTicket = True
                         sw.updateGroup(G)
                         wait["blacklist"][op.param2] = True
                         sw.leaveGroup(op.param1)
-                        boy.inviteIntoGroup(op.param1,[Zmid])
-                        boy.inviteIntoGroup(op.param1,[admin])
+                        ptatan1983.inviteIntoGroup(op.param1,[Zmid])
+                        ptatan1983.inviteIntoGroup(op.param1,[admin])
                     else:
                        pass
                         
@@ -1883,14 +1883,14 @@ def bot(op):
                 if msg._from in admin:
                   if wait["invite"] == True:
                     msg.contentType = 0
-                    contact = boy.getContact(msg.contentMetadata["mid"])
+                    contact = ptatan1983.getContact(msg.contentMetadata["mid"])
                     invite = msg.contentMetadata["mid"]
-                    groups = boy.getGroup(msg.to)
+                    groups = ptatan1983.getGroup(msg.to)
                     pending = groups.invitee
                     targets = []
                     for s in groups.members:
                         if invite in wait["blacklist"]:
-                            boy.sendMessage(msg.to, "「Awas kikil boss... hpus daftar bl dulu baru invite lagi boss」")
+                            ptatan1983.sendMessage(msg.to, "「Awas kikil boss... hpus daftar bl dulu baru invite lagi boss」")
                             break
                         else:
                             targets.append(invite)
@@ -1899,9 +1899,9 @@ def bot(op):
                     else:
                          for target in targets:
                             try:
-                                boy.findAndAddContactsByMid(target)
-                                boy.inviteIntoGroup(msg.to,[target])
-                                fira = boy.getContact(target)
+                                ptatan1983.findAndAddContactsByMid(target)
+                                ptatan1983.inviteIntoGroup(msg.to,[target])
+                                fira = ptatan1983.getContact(target)
                                 zx = ""
                                 zxc = ""
                                 zx2 = []
@@ -1916,11 +1916,11 @@ def bot(op):
                                 zx2.append(zx)
                                 zxc += pesan2
                                 text = xpesan + zxc + ret_ + ""
-                                boy.sendMessage(msg.to, text, contentMetadata={'MENTION':str('{"MENTIONEES":'+json.dumps(zx2).replace(' ','')+'}')}, contentType=0)
+                                ptatan1983.sendMessage(msg.to, text, contentMetadata={'MENTION':str('{"MENTIONEES":'+json.dumps(zx2).replace(' ','')+'}')}, contentType=0)
                                 wait["invite"] = False
                                 break
                             except:
-                                boy.sendText(msg.to,"Limit boss")
+                                ptatan1983.sendText(msg.to,"Limit boss")
                                 wait["invite"] = False
                                 break
 
@@ -1930,12 +1930,12 @@ def bot(op):
                 if wait["invite"] == True:
                     _name = msg.contentMetadata["displayName"]
                     invite = msg.contentMetadata["mid"]
-                    groups = boy.getGroup(msg.to)
+                    groups = ptatan1983.getGroup(msg.to)
                     pending = groups.invitee
                     targets = []
                     for s in groups.members:
                         if _name in s.displayName:
-                            boy.sendText(msg.to, _name + "sᴜᴅᴀʜ ᴅɪ ᴅᴀʟᴀᴍ ɢʀᴜᴘ")
+                            ptatan1983.sendText(msg.to, _name + "sᴜᴅᴀʜ ᴅɪ ᴅᴀʟᴀᴍ ɢʀᴜᴘ")
                         else:
                             targets.append(invite)
                     if targets == []:
@@ -1943,9 +1943,9 @@ def bot(op):
                     else:
                         for target in targets:
                             try:
-                                boy.findAndAddContactsByMid(target)
-                                boy.inviteIntoGroup(msg.to,[target])
-                                boy.sendText(msg.to,"Invite " + _name)
+                                ptatan1983.findAndAddContactsByMid(target)
+                                ptatan1983.inviteIntoGroup(msg.to,[target])
+                                ptatan1983.sendText(msg.to,"Invite " + _name)
                                 wait["invite"] = False
                                 break                              
                             except:             
