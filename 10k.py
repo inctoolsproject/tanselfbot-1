@@ -97,7 +97,7 @@ Zmid = sw.getProfile().mid
 KAC = [ptatan1983,ki,kk,kc,kb,kd,ke,kf,kg,kh,sw]
 ABC = [ptatan1983,ki,kk,kc,kb,kd,ke,kf,kg,kh,sw]
 Bots = [mid,Amid,Bmid,Cmid,Dmid,Emid,Fmid,Gmid,Hmid,Imid,Zmid]
-ptatan1983 = admin + staff
+nadya = admin + staff
 
 protectqr = []
 protectkick = []
@@ -351,7 +351,7 @@ def welcomeMembers(to, mid):
                 num=(num+1)
             else:
                 try:
-                    no = "\n  ╰══[ {} ]".format(str(ptatan1983.getGroup(to).name))
+                    no = "\n  ╰══[ {} ]".format(str(nadya.getGroup(to).name))
                 except:
                     no = "\n  ╰══[ Success ]"
         ptatan1983.sendMessage(to, textx, {'MENTION': str('{"MENTIONEES":' + json.dumps(arr) + '}')}, 0)
@@ -379,7 +379,7 @@ def leaveMembers(to, mid):
                 num=(num+1)
             else:
                 try:
-                    no = "\n  ╰══[ {} ]".format(str(ptatan1983.getGroup(to).name))
+                    no = "\n  ╰══[ {} ]".format(str(nadya.getGroup(to).name))
                 except:
                     no = "\n  ╰══[ Success ]"
         ptatan1983.sendMessage(to, textx, {'MENTION': str('{"MENTIONEES":' + json.dumps(arr) + '}')}, 0)
