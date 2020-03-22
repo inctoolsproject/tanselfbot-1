@@ -84,7 +84,7 @@ sw.log("Auth Token : " + str(sw.authToken))
 channel = LineChannel(sw)
 sw.log("Channel Access Token : " + str(channel.channelAccessToken))
 #==============================================================================#
-poll = LinePoll(boy)
+poll = LinePoll(ptatan1983)
 poll = LinePoll(k1)
 poll = LinePoll(k2)
 poll = LinePoll(k3)
@@ -112,8 +112,8 @@ Hmid = k8.getProfile().mid
 Imid = k9.getProfile().mid
 Jmid = k10.getProfile().mid
 Zmid = sw.getProfile().mid
-KAC = [boy,k1,k2,k3,k4,k5,k6,k7,k8,k9,k10,sw]
-ABC = [boy,k1,k2,k3,k4,k5,k6,k7,k8,k9,k10,sw]
+KAC = [ptatan1983,k1,k2,k3,k4,k5,k6,k7,k8,k9,k10,sw]
+ABC = [ptatan1983,k1,k2,k3,k4,k5,k6,k7,k8,k9,k10,sw]
 Bots = [mid,Amid,Bmid,Cmid,Dmid,Emid,Fmid,Gmid,Hmid,Imid,Jmid,Zmid]
 nadya = admin + staff + creator
 
@@ -300,7 +300,7 @@ def mentionMembers(to, mid):
                 num=(num+1)
             else:
                 try:
-                    no = "\n┗━━[ {} ]".format(str(aditmadzs.getGroup(to).name))
+                    no = "\n┗━━[ {} ]".format(str(nadya.getGroup(to).name))
                 except:
                     no = "\n┗━━[ Success ]"
         boy.sendMessage(to, textx, {'MENTION': str('{"MENTIONEES":' + json.dumps(arr) + '}')}, 0)
@@ -327,12 +327,12 @@ def siderMembers(to, mid):
                 num=(num+1)
             else:
                 try:
-                    no = "\n┗━━[ {} ]".format(str(aditmadzs.getGroup(to).name))
+                    no = "\n┗━━[ {} ]".format(str(nadya.getGroup(to).name))
                 except:
                     no = "\n┗━━[ Success ]"
-        boy.sendMessage(to, textx, {'MENTION': str('{"MENTIONEES":' + json.dumps(arr) + '}')}, 0)
+        ptatan1983.sendMessage(to, textx, {'MENTION': str('{"MENTIONEES":' + json.dumps(arr) + '}')}, 0)
     except Exception as error:
-        boy.sendMessage(to, "[ INFO ] Error :\n" + str(error))
+        ptatan1983.sendMessage(to, "[ INFO ] Error :\n" + str(error))
 
 def welcomeMembers(to, mid):
     try:
@@ -355,12 +355,12 @@ def welcomeMembers(to, mid):
                 num=(num+1)
             else:
                 try:
-                    no = "\n┗━━[ {} ]".format(str(aditmadzs.getGroup(to).name))
+                    no = "\n┗━━[ {} ]".format(str(nadya.getGroup(to).name))
                 except:
                     no = "\n┗━━[ Success ]"
-        boy.sendMessage(to, textx, {'MENTION': str('{"MENTIONEES":' + json.dumps(arr) + '}')}, 0)
+        ptatan1983.sendMessage(to, textx, {'MENTION': str('{"MENTIONEES":' + json.dumps(arr) + '}')}, 0)
     except Exception as error:
-        boy.sendMessage(to, "[ INFO ] Error :\n" + str(error))
+        ptatan1983.sendMessage(to, "[ INFO ] Error :\n" + str(error))
         
 def leaveMembers(to, mid):
     try:
@@ -383,12 +383,12 @@ def leaveMembers(to, mid):
                 num=(num+1)
             else:
                 try:
-                    no = "\n┗━━[ {} ]".format(str(aditmadzs.getGroup(to).name))
+                    no = "\n┗━━[ {} ]".format(str(nadya.getGroup(to).name))
                 except:
                     no = "\n┗━━[ Success ]"
-        boy.sendMessage(to, textx, {'MENTION': str('{"MENTIONEES":' + json.dumps(arr) + '}')}, 0)
+        ptatan1983.sendMessage(to, textx, {'MENTION': str('{"MENTIONEES":' + json.dumps(arr) + '}')}, 0)
     except Exception as error:
-        boy.sendMessage(to, "[ INFO ] Error :\n" + str(error))        
+        ptatan1983.sendMessage(to, "[ INFO ] Error :\n" + str(error))        
 
 def sendMention(to, mid, firstmessage):
     try:
@@ -405,16 +405,16 @@ def sendMention(to, mid, firstmessage):
         hari = (str(future - today))
         comma = hari.find(",")
         hari = hari[:comma]
-        teman = boy.getAllContactIds()
-        gid = boy.getGroupIdsJoined()
+        teman = ptatan1983.getAllContactIds()
+        gid = ptatan1983.getGroupIdsJoined()
         tz = pytz.timezone("Asia/Jakarta")
         timeNow = datetime.now(tz=tz)
         eltime = time.time() - mulai
         bot = runtime(eltime)
         text += mention+"◐ Jam : "+datetime.strftime(timeNow,'%H:%M:%S')+" Wib\n🐚 Group : "+str(len(gid))+"\n🐚 Teman : "+str(len(teman))+"\n🐚 Tanggal : "+datetime.strftime(timeNow,'%Y-%m-%d')+"\n🐚 Runtime : \n • "+bot
-        boy.sendMessage(to, text, {'MENTION': str('{"MENTIONEES":' + json.dumps(arr) + '}')}, 0)
+        ptatan1983.sendMessage(to, text, {'MENTION': str('{"MENTIONEES":' + json.dumps(arr) + '}')}, 0)
     except Exception as error:
-        boy.sendMessage(to, "[ INFO ] Error :\n" + str(error))
+        ptatan1983.sendMessage(to, "[ INFO ] Error :\n" + str(error))
 
 def command(text):
     pesan = text.lower()
@@ -688,7 +688,7 @@ def bot(op):
                 wait["blacklist"][op.param2] = True
         if op.type == 22:
             if wait['leaveRoom'] == True:
-                boy.leaveRoom(op.param1)
+                ptatan1983.leaveRoom(op.param1)
                 k1.leaveRoom(op.param1)
                 k2.leaveRoom(op.param1)
                 k3.leaveRoom(op.param1)
@@ -716,13 +716,13 @@ def bot(op):
         if op.type == 11:
             if op.param1 in protectqr:
                 try:
-                    if boy.getGroup(op.param1).preventedJoinByTicket == False:
+                    if ptatan1983.getGroup(op.param1).preventedJoinByTicket == False:
                         if op.param2 not in Bots and op.param2 not in owner and op.param2 not in admin and op.param2 not in staff:
-                            boy.reissueGroupTicket(op.param1)
-                            X = boy.getGroup(op.param1)
+                            ptatan1983.reissueGroupTicket(op.param1)
+                            X = ptatan1983.getGroup(op.param1)
                             X.preventedJoinByTicket = True
-                            boy.updateGroup(X)
-                            boy.sendMessage(op.param1, None, contentMetadata={'mid': op.param2}, contentType=13)
+                            ptatan1983.updateGroup(X)
+                            ptatan1983.sendMessage(op.param1, None, contentMetadata={'mid': op.param2}, contentType=13)
                 except:
                     try:
                         if k1.getGroup(op.param1).preventedJoinByTicket == False:
@@ -835,33 +835,33 @@ def bot(op):
                     if (wait["message"] in [" "," ","\n",None]):
                         pass
                     else:
-                        boy.sendText(op.param1, wait["message"])
-                        boy.blockContact(op.param1)
+                        ptatan1983.sendText(op.param1, wait["message"])
+                        ptatan1983.blockContact(op.param1)
                           
         if op.type == 13:
             if mid in op.param3:
                 if wait["autoLeave"] == True:
                     if op.param2 not in Bots and op.param2 not in owner and op.param2 not in admin and op.param2 not in staff:
                         boy.acceptGroupInvitation(op.param1)
-                        ginfo = boy.getGroup(op.param1)
-                        boy.sendMessage(op.param1,"Selamat Tinggal\n Group " +str(ginfo.name))
-                        boy.leaveGroup(op.param1)
+                        ginfo = ptatan1983.getGroup(op.param1)
+                        ptatan1983.sendMessage(op.param1,"Selamat Tinggal\n Group " +str(ginfo.name))
+                        ptatan1983.leaveGroup(op.param1)
                     else:
                         boy.acceptGroupInvitation(op.param1)
-                        ginfo = boy.getGroup(op.param1)
-                        boy.sendMessage(op.param1,"Hai " + str(ginfo.name))
+                        ginfo = ptatan1983.getGroup(op.param1)
+                        ptatan1983.sendMessage(op.param1,"Hai " + str(ginfo.name))
                         
         if op.type == 13:
             if mid in op.param3:
                 if wait["autoJoin"] == True:
                     if op.param2 in Bots and op.param2 not in owner and op.param2 not in admin and op.param2 not in staff:
-                        boy.acceptGroupInvitation(op.param1)                     
-                        ginfo = boy.getGroup(op.param1)
-                        boy.sendMessage(op.param1,"Haii " +str(ginfo.name))
+                        ptatan1983.acceptGroupInvitation(op.param1)                     
+                        ginfo = ptatan1983.getGroup(op.param1)
+                        ptatan1983.sendMessage(op.param1,"Haii " +str(ginfo.name))
                     else:
-                        boy.acceptGroupInvitation(op.param1)
+                        ptatan1983.acceptGroupInvitation(op.param1)
                         ginfo = boy.getGroup(op.param1)
-                        boy.sendMessage(op.param1,"Haii " + str(ginfo.name))
+                        ptatan1983.sendMessage(op.param1,"Haii " + str(ginfo.name))
         if op.type == 13:
             if Amid in op.param3:
                 if wait["autoJoin"] == True:
