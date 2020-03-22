@@ -303,9 +303,9 @@ def mentionMembers(to, mid):
                     no = "\n┗━━[ {} ]".format(str(nadya.getGroup(to).name))
                 except:
                     no = "\n┗━━[ Success ]"
-        boy.sendMessage(to, textx, {'MENTION': str('{"MENTIONEES":' + json.dumps(arr) + '}')}, 0)
+        ptatan1983.sendMessage(to, textx, {'MENTION': str('{"MENTIONEES":' + json.dumps(arr) + '}')}, 0)
     except Exception as error:
-        boy.sendMessage(to, "[ INFO ] Error :\n" + str(error))
+        ptatan1983.sendMessage(to, "[ INFO ] Error :\n" + str(error))
 
 def siderMembers(to, mid):
     try:
