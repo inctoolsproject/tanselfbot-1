@@ -5237,13 +5237,13 @@ def bot(op):
                                        msgs = "Protect kick sudah aktif"
                                   else:
                                        protectkick.append(msg.to)
-                                       ginfo = boy.getGroup(msg.to)
+                                       ginfo = ptatan1983.getGroup(msg.to)
                                        msgs = "Protect kick diaktifkan\nDi Group : " +str(ginfo.name)
                                   ptatan1983.sendMessage(msg.to, "「Diaktifkan」\n" + msgs)
                               elif spl == 'off':
                                     if msg.to in protectkick:
                                          protectkick.remove(msg.to)
-                                         ginfo = boy.getGroup(msg.to)
+                                         ginfo = ptatan1983.getGroup(msg.to)
                                          msgs = "Protect kick dinonaktifkan\nDi Group : " +str(ginfo.name)
                                     else:
                                          msgs = "Protect kick sudah tidak aktif"
@@ -5283,7 +5283,7 @@ def bot(op):
                               elif spl == 'off':
                                     if msg.to in protectcancel:
                                          protectcancel.remove(msg.to)
-                                         ginfo = boy.getGroup(msg.to)
+                                         ginfo = ptatan1983.getGroup(msg.to)
                                          msgs = "Protect cancel dinonaktifkan\nDi Group : " +str(ginfo.name)
                                     else:
                                          msgs = "Protect cancel sudah tidak aktif"
@@ -5473,7 +5473,7 @@ def bot(op):
                                        for target in targets:
                                          if target not in Bots and target not in Boy:
                                            try:
-                                               klist=[boy,k1,k2,k3,k4,k5,k6,k7,k8,k9,k10]
+                                               klist=[ptatan1983,k1,k2,k3,k4,k5,k6,k7,k8,k9,k10]
                                                kicker=random.choice(klist)
                                                kicker.kickoutFromGroup(msg.to,[target])
                                            except Exception as error:
@@ -5550,7 +5550,7 @@ def bot(op):
                                for x in key["MENTIONEES"]:
                                     targets.append(x["M"])
                                for target in targets:
-                                   if target not in Boy:
+                                   if target not in ptatan1983:
                                        try:
                                            staff.remove(target)
                                            ptatan1983.sendMessage(msg.to,"Berhasil menghapus admin")
@@ -5565,7 +5565,7 @@ def bot(op):
                                for x in key["MENTIONEES"]:
                                     targets.append(x["M"])
                                for target in targets:
-                                   if target not in Boy:
+                                   if target not in ptatan1983:
                                        try:
                                            Bots.remove(target)
                                            ptatan1983.sendMessage(msg.to,"Berhasil menghapus admin")
@@ -5930,94 +5930,94 @@ def bot(op):
                               else:
                                     ma = ""
                                     for i in wait["blacklist"]:
-                                        ma = boy.getContact(i)
+                                        ma = ptatan1983.getContact(i)
                                         ptatan1983.sendMessage(msg.to, None, contentMetadata={'mid': i}, contentType=13)
 
                         elif cmd == "clearban" or text.lower() == 'clearban':
                           if wait["selfbot"] == True:
                             if msg._from in admin:
                               wait["blacklist"] = {}
-                              ragets = boy.getContacts(wait["blacklist"])
+                              ragets = ptatan1983.getContacts(wait["blacklist"])
                               mc = "「%i」User Blacklist" % len(ragets)
-                              boy.sendMessage(msg.to,"Sukses membersihkan " +mc)
+                              ptatan1983.sendMessage(msg.to,"Sukses membersihkan " +mc)
 #===========COMMAND SET============#
                         elif 'Set pesan: ' in msg.text:
                            if msg._from in admin:
                               spl = msg.text.replace('Set pesan: ','')
                               if spl in [""," ","\n",None]:
-                                  boy.sendMessage(msg.to, "Gagal mengganti Pesan Message")
+                                  ptatan1983.sendMessage(msg.to, "Gagal mengganti Pesan Message")
                               else:
                                   wait["message"] = spl
-                                  boy.sendMessage(msg.to, "「Pesan Msg」\nPesan Message diganti jadi :\n\n「{}」".format(str(spl)))
+                                  ptatan1983.sendMessage(msg.to, "「Pesan Msg」\nPesan Message diganti jadi :\n\n「{}」".format(str(spl)))
 
                         elif 'Set welcome: ' in msg.text:
                            if msg._from in admin:
                               spl = msg.text.replace('Set welcome: ','')
                               if spl in [""," ","\n",None]:
-                                  boy.sendMessage(msg.to, "Gagal mengganti Welcome Message")
+                                  ptatan1983.sendMessage(msg.to, "Gagal mengganti Welcome Message")
                               else:
                                   wait["welcome"] = spl
-                                  boy.sendMessage(msg.to, "「Welcome Msg」\nWelcome Message diganti jadi :\n\n「{}」".format(str(spl)))
+                                  ptatan1983.sendMessage(msg.to, "「Welcome Msg」\nWelcome Message diganti jadi :\n\n「{}」".format(str(spl)))
                                   
                         elif 'Set leave: ' in msg.text:
                            if msg._from in admin:
                               spl = msg.text.replace('Set leave: ','')
                               if spl in [""," ","\n",None]:
-                                  boy.sendMessage(msg.to, "Gagal mengganti Leave Message")
+                                  ptatan1983.sendMessage(msg.to, "Gagal mengganti Leave Message")
                               else:
                                   wait["leave"] = spl
-                                  boy.sendMessage(msg.to, "「Leave Msg」\nLeave Message diganti jadi :\n\n「{}」".format(str(spl)))                                    
+                                  ptatan1983.sendMessage(msg.to, "「Leave Msg」\nLeave Message diganti jadi :\n\n「{}」".format(str(spl)))                                    
 
                         elif 'Set respon: ' in msg.text:
                            if msg._from in admin:
                               spl = msg.text.replace('Set respon: ','')
                               if spl in [""," ","\n",None]:
-                                  boy.sendMessage(msg.to, "Gagal mengganti Respon Message")
+                                  ptatan1983.sendMessage(msg.to, "Gagal mengganti Respon Message")
                               else:
                                   wait["Respontag"] = spl
-                                  boy.sendMessage(msg.to, "「Respon Msg」\nRespon Message diganti jadi :\n\n「{}」".format(str(spl)))
+                                  ptatan1983.sendMessage(msg.to, "「Respon Msg」\nRespon Message diganti jadi :\n\n「{}」".format(str(spl)))
 
                         elif 'Set spam: ' in msg.text:
                            if msg._from in admin:
                               spl = msg.text.replace('Set spam: ','')
                               if spl in [""," ","\n",None]:
-                                  boy.sendMessage(msg.to, "Gagal mengganti Spam")
+                                  ptatan1983.sendMessage(msg.to, "Gagal mengganti Spam")
                               else:
                                   Setmain["AFmessage1"] = spl
-                                  boy.sendMessage(msg.to, "「Spam Msg」\nSpam Message diganti jadi :\n\n「{}」".format(str(spl)))
+                                  ptatan1983.sendMessage(msg.to, "「Spam Msg」\nSpam Message diganti jadi :\n\n「{}」".format(str(spl)))
 
                         elif 'Set sider: ' in msg.text:
                            if msg._from in admin:
                               spl = msg.text.replace('Set sider: ','')
                               if spl in [""," ","\n",None]:
-                                  boy.sendMessage(msg.to, "Gagal mengganti Sider Message")
+                                  ptatan1983.sendMessage(msg.to, "Gagal mengganti Sider Message")
                               else:
                                   wait["mention"] = spl
-                                  boy.sendMessage(msg.to, "「Sider Msg」\nSider Message diganti jadi :\n\n「{}」".format(str(spl)))
+                                  ptatan1983.sendMessage(msg.to, "「Sider Msg」\nSider Message diganti jadi :\n\n「{}」".format(str(spl)))
 
                         elif text.lower() == "cek pesan":
                             if msg._from in admin:
-                               boy.sendMessage(msg.to, "「Pesan Msg」\nPesan Message lu :\n\n「 " + str(wait["message"]) + " 」")
+                               ptatan1983.sendMessage(msg.to, "「Pesan Msg」\nPesan Message lu :\n\n「 " + str(wait["message"]) + " 」")
 
                         elif text.lower() == "cek welcome":
                             if msg._from in admin:
-                               boy.sendMessage(msg.to, "「Welcome Msg」\nWelcome Message lu :\n\n「 " + str(wait["welcome"]) + " 」")
+                               ptatan1983.sendMessage(msg.to, "「Welcome Msg」\nWelcome Message lu :\n\n「 " + str(wait["welcome"]) + " 」")
                                
                         elif text.lower() == "cek leave":
                             if msg._from in admin:
-                               boy.sendMessage(msg.to, "「Leave Msg」\nLeave Message lu :\n\n「 " + str(wait["leave"]) + " 」")                                 
+                               ptatan1983.sendMessage(msg.to, "「Leave Msg」\nLeave Message lu :\n\n「 " + str(wait["leave"]) + " 」")                                 
 
                         elif text.lower() == "cek respon":
                             if msg._from in admin:
-                               boy.sendMessage(msg.to, "「Respon Msg」\nRespon Message lu :\n\n「 " + str(wait["Respontag"]) + " 」")
+                               ptatan1983.sendMessage(msg.to, "「Respon Msg」\nRespon Message lu :\n\n「 " + str(wait["Respontag"]) + " 」")
 
                         elif text.lower() == "cek spam":
                             if msg._from in admin:
-                               boy.sendMessage(msg.to, "「Spam Msg」\nSpam Message lu :\n\n「 " + str(Setmain["AFmessage1"]) + " 」")
+                               ptatan1983.sendMessage(msg.to, "「Spam Msg」\nSpam Message lu :\n\n「 " + str(Setmain["AFmessage1"]) + " 」")
 
                         elif text.lower() == "cek sider":
                             if msg._from in admin:
-                               boy.sendMessage(msg.to, "「Sider Msg」\nSider Message lu :\n\n「 " + str(wait["mention"]) + " 」")
+                               ptatan1983.sendMessage(msg.to, "「Sider Msg」\nSider Message lu :\n\n「 " + str(wait["mention"]) + " 」")
 
 #===========JOIN TICKET============#
                         elif "/ti/g/" in msg.text.lower():
@@ -6030,9 +6030,9 @@ def bot(op):
                                      if l not in n_links:
                                         n_links.append(l)
                                  for ticket_id in n_links:
-                                     group = boy.findGroupByTicket(ticket_id)
-                                     boy.acceptGroupInvitationByTicket(group.id,ticket_id)
-                                     boy.sendMessage(msg.to, "😈 JOIN GROUP 😈 : %s" % str(group.name))
+                                     group = ptatan1983.findGroupByTicket(ticket_id)
+                                     ptatan1983.acceptGroupInvitationByTicket(group.id,ticket_id)
+                                     ptatan1983.sendMessage(msg.to, "😈 JOIN GROUP 😈 : %s" % str(group.name))
                                      group1 = k1.findGroupByTicket(ticket_id)
                                      k1.acceptGroupInvitationByTicket(group1.id,ticket_id)
                                      k1.sendMessage(msg.to, "🤖 SELFBOT-BY:MAX 🤖 1 : %s" % str(group.name))
