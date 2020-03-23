@@ -215,6 +215,22 @@ def logError(text):
     with open("errorLog.txt","a") as error:
         error.write("\n[%s] %s" % (str(time), text))
 
+def sendMention(to, mid, firstmessage, lastmessage):
+    try:
+        arrData = ""
+        text = "%s " %(str(firstmessage))
+        arr = []
+        mention = "@x "
+        slen = str(len(text))
+        elen = str(len(text) + len(mention) - 1)
+        arrData = {'S':slen, 'E':elen, 'M':mid}
+        arr.append(arrData)
+        text += mention + str(lastmessage)
+        line.sendMessage(to, text, {'MENTION': str('{"MENTIONEES":' + json.dumps(arr) + '}')}, 0)
+    except Exception as error:
+        logError(error)
+        line.sendMessage(to, "[ INFO ] Error :\n" + str(error))
+
 def sendMessage(to, text, contentMetadata={}, contentType=0):
     mes = Message()
     mes.to, mes.from_ = to, profile.mid
@@ -231,9 +247,76 @@ def sendMessageWithMention(to, lineMID):
         line.sendMessage(to, text_, contentMetadata={'MENTION':'{"MENTIONEES":['+aa+']}'}, contentType=0)
     except Exception as error:
         logError(error)
- 
+
+def cTime_to_datetime(unixtime):
+    return datetime.fromtimestamp(int(str(unixtime)[:len(str(unixtime))-3]))
+def dt_to_str(dt):
+    return dt.strftime('%H:%M:%S')
+  
+def delete_log():
+    ndt = datetime.now()
+    for data in msg_dict:
+        if (datetime.utcnow() - cTime_to_datetime(msg_dict[data]["createdTime"])) > timedelta(1):
+            if "path" in msg_dict[data]:
+                line.deleteFile(msg_dict[data]["path"])
+            del msg_dict[data]
+            
+def sendMention(to, text="", mids=[]):
+    arrData = ""
+    arr = []
+    mention = "@zeroxyuuki "
+    if mids == []:
+        raise Exception("Invalid mids")
+    if "@!" in text:
+        if text.count("@!") != len(mids):
+            raise Exception("Invalid mids")
+        texts = text.split("@!")
+        textx = ""
+        for mid in mids:
+            textx += str(texts[mids.index(mid)])
+            slen = len(textx)
+            elen = len(textx) + 15
+            arrData = {'S':str(slen), 'E':str(elen - 4), 'M':mid}
+            arr.append(arrData)
+            textx += mention
+        textx += str(texts[len(mids)])
+    else:
+        textx = ""
+        slen = len(textx)
+        elen = len(textx) + 15
+        arrData = {'S':str(slen), 'E':str(elen - 4), 'M':mids[0]}
+        arr.append(arrData)
+        textx += mention + str(text)
+    line.sendMessage(to, textx, {'MENTION': str('{"MENTIONEES":' + json.dumps(arr) + '}')}, 0)
+    
+def mentionMembers(to, mid):
+    try:
+        arrData = ""
+        textx = "╔══[Mention {} User]\n╠ ".format(str(len(mid)))
+        arr = []
+        no = 1
+        for i in mid:
+            mention = "@x\n"
+            slen = str(len(textx))
+            elen = str(len(textx) + len(mention) - 1)
+            arrData = {'S':slen, 'E':elen, 'M':i}
+            arr.append(arrData)
+            textx += mention
+            if no < len(mid):
+                no += 1
+                textx += "╠ "
+            else:
+                try:
+                    textx += "╚══[ {} ]".format(str(line.getGroup(to).name))
+                except:
+                    pass
+        line.sendMessage(to, textx, {'MENTION': str('{"MENTIONEES":' + json.dumps(arr) + '}')}, 0)
+    except Exception as error:
+        logError(error)
+        line.sendMessage(to, "[ INFO ] Error :\n" + str(error))
+
 def myhelp():
-    myHelp = """ 🌺 tanbot Self🌺
+    myHelp = """꧁💓 @:꓄ꍏꈤᖘꍏ꓄꓄ꍏꌩ💓꧂
 🌺คำสั่ง = คำสั่ง
 🌺คำสั่ง2 = คำสั่งเชลบอท
 🌺คำสั่ง3 = คำสั่งการแทค
