@@ -11,11 +11,11 @@ from bs4 import BeautifulSoup
 from googletrans import Translator
 import youtube_dl
 
-ptatan1983 = LineClient()
-#ptatan1983 = LineClient(authToken='TOKEN')
-ptatan1983.log("Auth Token : " + str(ptatan1983.authToken))
-channel = LineChannel(ptatan1983)
-ptatan1983.log("Channel Access Token : " + str(channel.channelAccessToken))
+nadya = LineClient()
+#nadya = LineClient(authToken='TOKEN')
+nadya.log("Auth Token : " + str(nadya.authToken))
+channel = LineChannel(nadya)
+nadya.log("Channel Access Token : " + str(channel.channelAccessToken))
 
 ki = LineClient()
 #ki = LineClient(authToken='TOKEN LU')
@@ -77,13 +77,13 @@ sw.log("Auth Token : " + str(sw.authToken))
 channel1 = LineChannel(sw)
 sw.log("Channel Access Token : " + str(channel1.channelAccessToken))
 
-poll = LinePoll(ptatan1983)
-call = ptatan1983
+poll = LinePoll(nadya)
+call = nadya
 creator = ["uda8195e53e6c6e17f3f745743e477100","u4862fe4b182b2fd194a3108e2f3662e8"]
 owner = ["uda8195e53e6c6e17f3f745743e477100"]
 admin = ["uda8195e53e6c6e17f3f745743e477100","u4862fe4b182b2fd194a3108e2f3662e8","uc4e3f36a12aedf1b8835b4697cd8f4ca","uca3853eeb4ec2a86d14ac7e8e359d76d","ub99dd0aea6dea3b40c708f546d3f72e6","u6de346a06258794ff5d52a0189e1a21f","u17e5e2396cdc6004856463758b856c43","uf9a3ed8881f977ac342d483991a3cdd2","ua4705f32b4ec4e1f9802b1ca1e54fee3","uc6793b26f4a4a3d3d82c399d70056d98","u27390643f66508ebbac2190a84682a7b"]
 staff = ["uda8195e53e6c6e17f3f745743e477100"]
-mid = ptatan1983.getProfile().mid
+mid = nadya.getProfile().mid
 Amid = ki.getProfile().mid
 Bmid = kk.getProfile().mid
 Cmid = kc.getProfile().mid
@@ -94,8 +94,8 @@ Gmid = kf.getProfile().mid
 Hmid = kg.getProfile().mid
 Imid = kh.getProfile().mid
 Zmid = sw.getProfile().mid
-KAC = [ptatan1983,ki,kk,kc,kb,kd,ke,kf,kg,kh,sw]
-ABC = [ptatan1983,ki,kk,kc,kb,kd,ke,kf,kg,kh,sw]
+KAC = [nadya,ki,kk,kc,kb,kd,ke,kf,kg,kh,sw]
+ABC = [nadya,ki,kk,kc,kb,kd,ke,kf,kg,kh,sw]
 Bots = [mid,Amid,Bmid,Cmid,Dmid,Emid,Fmid,Gmid,Hmid,Imid,Zmid]
 nadya = admin + staff
 
@@ -115,10 +115,10 @@ myProfile = {
 	"pictureStatus": ""
 }
 
-ptatan1983Profile = ptatan1983.getProfile()
-myProfile["displayName"] = ptatan1983Profile.displayName
-myProfile["statusMessage"] = ptatan1983Profile.statusMessage
-myProfile["pictureStatus"] = ptatan1983Profile.pictureStatus
+nadyaProfile = nadya.getProfile()
+myProfile["displayName"] = nadyaProfile.displayName
+myProfile["statusMessage"] = nadyaProfile.statusMessage
+myProfile["pictureStatus"] = nadyaProfile.pictureStatus
 
 responsename1 = ki.getProfile().displayName
 responsename2 = kk.getProfile().displayName
@@ -281,7 +281,7 @@ def sendMentionFooter(to, text="", mids=[]):
         arrData = {'S':str(slen), 'E':str(elen - 4), 'M':mids[0]}
         arr.append(arrData)
         textx += mention + str(text)
-    ptatan1983.sendMessage(to, textx, {'AGENT_NAME':'@pratannaimjoi on Instagram', 'AGENT_LINK': 'https://www.instagram.com/pratannaimjoi', 'AGENT_ICON': "http://dl.profile.line-cdn.net/" + ptatan1983.getProfile().picturePath, 'MENTION': str('{"MENTIONEES":' + json.dumps(arr) + '}')}, 0)
+    nadya.sendMessage(to, textx, {'AGENT_NAME':'@pratannaimjoi on Instagram', 'AGENT_LINK': 'https://www.instagram.com/pratannaimjoi', 'AGENT_ICON': "http://dl.profile.line-cdn.net/" + ptatan1983.getProfile().picturePath, 'MENTION': str('{"MENTIONEES":' + json.dumps(arr) + '}')}, 0)
 
 def sendMessageFooter(to, text, name, url, iconlink):
         contentMetadata = {
@@ -289,13 +289,13 @@ def sendMessageFooter(to, text, name, url, iconlink):
             'AGENT_LINK': url,
             'AGENT_ICON': iconlink
         }
-        return ptatan1983.sendMessage(to, text, contentMetadata, 0)
+        return nadya.sendMessage(to, text, contentMetadata, 0)
     
 
 def sendMessageWithFooter(to, text):
- ptatan1983.reissueUserTicket()
+ nadya.reissueUserTicket()
  madzs = ptatan1983.getProfile()
- ticket = "http://line.me/ti/p/"+ptatan1983.getUserTicket().id
+ ticket = "http://line.me/ti/p/"+nadya.getUserTicket().id
  pict = "http://dl.profile.line-cdn.net/"+ptatan1983.pictureStatus
  name = "「 TANBOTMEVERDIE✯͜͡❂➣ 」"
  ptatan1983 = {"AGENT_ICON": pict,
