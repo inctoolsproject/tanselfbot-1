@@ -12,11 +12,11 @@ from bs4 import BeautifulSoup
 from googletrans import Translator
 import youtube_dl
 #==============================================================================#
-ptatan1983 = LineClient()
-#boy = LineClient(authToken=' TOKEN MU CINTA')
-ptatan1983.log("Auth Token : " + str(ptatan1983.authToken))
+nadya = LineClient()
+#nadya = LineClient(authToken=' TOKEN MU CINTA')
+nadya.log("Auth Token : " + str(nadya.authToken))
 channel = LineChannel(boy)
-ptatan1983.log("Channel Access Token : " + str(channel.channelAccessToken))
+nadya.log("Channel Access Token : " + str(channel.channelAccessToken))
 #==============================================================================#
 k1 = LineClient()
 #k1 = LineClient(authToken=' TOKEN MU CINTA')
@@ -84,7 +84,7 @@ sw.log("Auth Token : " + str(sw.authToken))
 channel = LineChannel(sw)
 sw.log("Channel Access Token : " + str(channel.channelAccessToken))
 #==============================================================================#
-poll = LinePoll(ptatan1983)
+poll = LinePoll(nadya)
 poll = LinePoll(k1)
 poll = LinePoll(k2)
 poll = LinePoll(k3)
@@ -95,7 +95,7 @@ poll = LinePoll(k7)
 poll = LinePoll(k8)
 poll = LinePoll(k9)
 poll = LinePoll(k10)
-call = ptatan1983
+call = nadya
 creator = ["uda8195e53e6c6e17f3f745743e477100"]
 owner = ["uda8195e53e6c6e17f3f745743e477100"]
 admin = ["uda8195e53e6c6e17f3f745743e477100"]
