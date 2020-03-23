@@ -1,7 +1,7 @@
 # แก้โดย SELFBOT-BY:MAX ติดต่อได้ที่เบอร์ 191
 # -*- coding: utf-8 -*-
-import LINEPY
-from LINEPY import *
+import linepy
+from linepy import *
 from akad.ttypes import *
 from multiprocessing import Pool, Process
 from time import sleep
