@@ -294,23 +294,23 @@ def sendMessageFooter(to, text, name, url, iconlink):
 
 def sendMessageWithFooter(to, text):
  nadya.reissueUserTicket()
- madzs = ptatan1983.getProfile()
+ nadya = ptatan1983.getProfile()
  ticket = "http://line.me/ti/p/"+nadya.getUserTicket().id
- pict = "http://dl.profile.line-cdn.net/"+ptatan1983.pictureStatus
+ pict = "http://dl.profile.line-cdn.net/"+nadya.pictureStatus
  name = "「 TANBOTMEVERDIE✯͜͡❂➣ 」"
- ptatan1983 = {"AGENT_ICON": pict,
+ nadya = {"AGENT_ICON": pict,
      "AGENT_NAME": name,
      "AGENT_LINK": ticket
  }
- ptatan1983.sendMessage(to, text, contentMetadata=ptatan1983)
+ nadya.sendMessage(to, text, contentMetadata=ptatan1983)
 
 def sendMentionV10(to, text,name, url, iconlink):
-    ptatan1983.sendMessage(to, text, {'AGENT_NAME': name,'AGENT_LINK': url,'AGENT_ICON': iconlink })
+    nadya.sendMessage(to, text, {'AGENT_NAME': name,'AGENT_LINK': url,'AGENT_ICON': iconlink })
 
 def mentionMembers(to, mid,name,url,iconlink):
     try:
         arrData = ""
-        ginfo = ptatan1983.getGroup(to)
+        ginfo = nadya.getGroup(to)
         textx = "    ⊰❂⊱Mention Members⊰❂⊱\n\n•1. "
         arr = []
         no = 1
@@ -326,9 +326,9 @@ def mentionMembers(to, mid,name,url,iconlink):
                 textx += "•{}. ".format(str(no))
             else:
                 textx += "\nTotal: {} members".format(str(len(mid)))
-        ptatan1983.sendMessage(to, textx, {'MENTION': str('{"MENTIONEES":' + json.dumps(arr) + '}'),'AGENT_NAME': name,'AGENT_LINK': url,'AGENT_ICON': iconlink },0)
+        nadya.sendMessage(to, textx, {'MENTION': str('{"MENTIONEES":' + json.dumps(arr) + '}'),'AGENT_NAME': name,'AGENT_LINK': url,'AGENT_ICON': iconlink },0)
     except Exception as error:
-        ptatan1983.sendMessage(to, "[ INFO ] Error :\n" + str(error))
+        nadya.sendMessage(to, "[ INFO ] Error :\n" + str(error))
 
 def welcomeMembers(to, mid):
     try:
@@ -338,7 +338,7 @@ def welcomeMembers(to, mid):
         no = 1
         num = 2
         for i in mid:
-            ginfo = ptatan1983.getGroup(to)
+            ginfo = nadya.getGroup(to)
             mention = "@x\n"
             slen = str(len(textx))
             elen = str(len(textx) + len(mention) - 1)
@@ -354,9 +354,9 @@ def welcomeMembers(to, mid):
                     no = "\n  ╰══[ {} ]".format(str(nadya.getGroup(to).name))
                 except:
                     no = "\n  ╰══[ Success ]"
-        ptatan1983.sendMessage(to, textx, {'MENTION': str('{"MENTIONEES":' + json.dumps(arr) + '}')}, 0)
+        nadya.sendMessage(to, textx, {'MENTION': str('{"MENTIONEES":' + json.dumps(arr) + '}')}, 0)
     except Exception as error:
-        ptatan1983.sendMessage(to, "[ INFO ] Error :\n" + str(error))
+        nadya.sendMessage(to, "[ INFO ] Error :\n" + str(error))
         
 def leaveMembers(to, mid):
     try:
@@ -366,7 +366,7 @@ def leaveMembers(to, mid):
         no = 1
         num = 2
         for i in mid:
-            ginfo = ptatan1983.getGroup(to)
+            ginfo = nadya.getGroup(to)
             mention = "@x\n"
             slen = str(len(textx))
             elen = str(len(textx) + len(mention) - 1)
@@ -382,9 +382,9 @@ def leaveMembers(to, mid):
                     no = "\n  ╰══[ {} ]".format(str(nadya.getGroup(to).name))
                 except:
                     no = "\n  ╰══[ Success ]"
-        ptatan1983.sendMessage(to, textx, {'MENTION': str('{"MENTIONEES":' + json.dumps(arr) + '}')}, 0)
+        nadya.sendMessage(to, textx, {'MENTION': str('{"MENTIONEES":' + json.dumps(arr) + '}')}, 0)
     except Exception as error:
-        ptatan1983.sendMessage(to, "[ INFO ] Error :\n" + str(error))        
+        nadya.sendMessage(to, "[ INFO ] Error :\n" + str(error))        
 
 def sendMention(to, mid, firstmessage):
     try:
@@ -401,16 +401,16 @@ def sendMention(to, mid, firstmessage):
         hari = (str(future - today))
         comma = hari.find(",")
         hari = hari[:comma]
-        teman = ptatan1983.getAllContactIds()
-        gid = ptatan1983.getGroupIdsJoined()
+        teman = nadya.getAllContactIds()
+        gid = nadya.getGroupIdsJoined()
         tz = pytz.timezone("Asia/Jakarta")
         timeNow = datetime.now(tz=tz)
         eltime = time.time() - mulai
         bot = runtime(eltime)
         text += mention+"┃┃Jam : "+datetime.strftime(timeNow,'%H:%M:%S')+" Wib\n┃┃Group : "+str(len(gid))+"\n┃┃Teman : "+str(len(teman))+"\n┃┃Version : SELFBOT-BY:MAX\n┃┃Tanggal : "+datetime.strftime(timeNow,'%Y-%m-%d')+"\n┃┃Runtime :\n "+bot
-        ptatan1983.sendMessage(to, text, {'MENTION': str('{"MENTIONEES":' + json.dumps(arr) + '}')}, 0)
+        nadya.sendMessage(to, text, {'MENTION': str('{"MENTIONEES":' + json.dumps(arr) + '}')}, 0)
     except Exception as error:
-        ptatan1983.sendMessage(to, "[ INFO ] Error :\n" + str(error))
+        nadya.sendMessage(to, "[ INFO ] Error :\n" + str(error))
 
 def command(text):
     pesan = text.lower()
