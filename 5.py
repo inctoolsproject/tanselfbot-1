@@ -11,11 +11,11 @@ from bs4 import BeautifulSoup
 from googletrans import Translator
 import youtube_dl
 #==============================================================================#
-ptatan1983 = LineClient()
-#ptatan1983 = LineClient(authToken=' TOKEN MU CINTA')
-ptatan1983.log("Auth Token : " + str(ptatan1983.authToken))
-channel = LineChannel(ptatan1983)
-ptatan1983.log("Channel Access Token : " + str(channel.channelAccessToken))
+Line = LineClient()
+#line = LineClient(authToken=' TOKEN MU CINTA')
+Line.log("Auth Token : " + str(line.authToken))
+channel = LineChannel(line)
+Line.log("Channel Access Token : " + str(channel.channelAccessToken))
 #==============================================================================#
 k1 = LineClient()
 #k1 = LineClient(authToken=' TOKEN MU CINTA')
@@ -83,7 +83,7 @@ sw.log("Auth Token : " + str(sw.authToken))
 channel = LineChannel(sw)
 sw.log("Channel Access Token : " + str(channel.channelAccessToken))
 #==============================================================================#
-poll = LinePoll(ptatan1983)
+poll = LinePoll(line)
 poll = LinePoll(k1)
 poll = LinePoll(k2)
 poll = LinePoll(k3)
@@ -94,12 +94,12 @@ poll = LinePoll(k7)
 poll = LinePoll(k8)
 poll = LinePoll(k9)
 poll = LinePoll(k10)
-call = ptatan1983
+call = line
 creator = ["u14f64e139a3817afaabe27d237afb36b"]
 owner = ["u14f64e139a3817afaabe27d237afb36b"]
 admin = ["u14f64e139a3817afaabe27d237afb36b"]
 staff = ["u14f64e139a3817afaabe27d237afb36b"]
-mid = ptatan1983.getProfile().mid
+mid = line.getProfile().mid
 Amid = k1.getProfile().mid
 Bmid = k2.getProfile().mid
 Cmid = k3.getProfile().mid
@@ -111,8 +111,8 @@ Hmid = k8.getProfile().mid
 Imid = k9.getProfile().mid
 Jmid = k10.getProfile().mid
 Zmid = sw.getProfile().mid
-KAC = [ptatan1983,k1,k2,k3,k4,k5,k6,k7,k8,k9,k10,sw]
-ABC = [ptatan1983,k1,k2,k3,k4,k5,k6,k7,k8,k9,k10,sw]
+KAC = [line,k1,k2,k3,k4,k5,k6,k7,k8,k9,k10,sw]
+ABC = [line,k1,k2,k3,k4,k5,k6,k7,k8,k9,k10,sw]
 Bots = [mid,Amid,Bmid,Cmid,Dmid,Emid,Fmid,Gmid,Hmid,Imid,Jmid,Zmid]
 nadya = admin + staff + creator
 
@@ -138,10 +138,10 @@ myProfile = {
 	"pictureStatus": ""
 }
 
-ptatan1983Profile = ptatan1983.getProfile()
-myProfile["displayName"] = ptatan1983Profile.displayName
-myProfile["statusMessage"] = ptatan1983Profile.statusMessage
-myProfile["pictureStatus"] = ptatan1983Profile.pictureStatus
+Linerofile = line.getProfile()
+myProfile["displayName"] = lineProfile.displayName
+myProfile["statusMessage"] = lineProfile.statusMessage
+myProfile["pictureStatus"] = lineProfile.pictureStatus
 
 responsename1 = k1.getProfile().displayName
 responsename2 = k2.getProfile().displayName
