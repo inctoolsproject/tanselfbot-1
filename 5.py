@@ -1,31 +1,52 @@
 # -*- coding: utf-8 -*-
-from tanlinepy import *
+import linepy
+from linepy import *
 from akad.ttypes import *
 from multiprocessing import Pool, Process
-from datetime import datetime
 from time import sleep
+import pytz, datetime, pafy, time, timeit, random, sys, ast, re, os, json, subprocess, threading, string, codecs, requests, ctypes, urllib, wikipedia
+from datetime import timedelta, date
+from datetime import datetime
 from bs4 import BeautifulSoup
-from humanfriendly import format_timespan, format_size, format_number, format_length
-import time, random, sys, json, codecs, threading, glob, re, string, os, requests, subprocess, six, ast, pytz, urllib.request, urllib.parse, urllib.error, urllib.parse,antolib,subprocess,unicodedata,GACSender
-from gtts import gTTS
 from googletrans import Translator
+import youtube_dl
 #==============================================================================#
-botStart = time.time()
+ptatan1983 = LineClient()
+#ptatan1983 = LineClient(authToken=' TOKEN MU CINTA')
+ptatan1983.log("Auth Token : " + str(ptatan1983.authToken))
+channel = LineChannel(ptatan1983)
+ptatan1983.log("Channel Access Token : " + str(channel.channelAccessToken))
 #==============================================================================#
-#from important import *
-
-# Setup Argparse
-#parser = argparse.ArgumentParser(description='© 2018 Edit By รัตน์')
-#parser.add_argument('-t', '--token', type=str, metavar='', required=False, help='Token | Example : Exxxx')
-#parser.add_argument('-e', '--email', type=str, default='', metavar='', required=False, help='Email Address | Example : example@xxx.xx')
-#parser.add_argument('-p', '--passwd', type=str, default='', metavar='', required=False, help='Password | Example : xxxx')
-#parser.add_argument('-a', '--apptype', type=str, default='', metavar='', required=False, choices=list(ApplicationType._NAMES_TO_VALUES), help='Application Type | Example : CHROMEOS')
-#parser.add_argument('-s', '--systemname', type=str, default='', metavar='', required=False, help='System Name | Example : Chrome_OS')
-#parser.add_argument('-c', '--channelid', type=str, default='', metavar='', required=False, help='Channel ID | Example : 1341209950')
-#parser.add_argument('-T', '--traceback', type=str2bool, nargs='?', default=False, metavar='', required=False, const=True, choices=[True, False], help='Using Traceback | Use : True/False')
-#parser.add_argument('-S', '--showqr', type=str2bool, nargs='?', default=False, metavar='', required=False, const=True, choices=[True, False], help='Show QR | Use : True/False')
-#args = parser.parse_args()
-
+k1 = LineClient()
+#k1 = LineClient(authToken=' TOKEN MU CINTA')
+k1.log("Auth Token : " + str(k1.authToken))
+channel1 = LineChannel(k1)
+k1.log("Channel Access Token : " + str(channel1.channelAccessToken))
+#==============================================================================#
+k2 = LineClient()
+#k2 = LineClient(authToken=' TOKEN MU CINTA')
+k2.log("Auth Token : " + str(k2.authToken))
+channel2 = LineChannel(k2)
+k2.log("Channel Access Token : " + str(channel2.channelAccessToken))
+#==============================================================================#
+k3 = LineClient()
+#k3 = LineClient(authToken=' TOKEN MU CINTA')
+k3.log("Auth Token : " + str(k3.authToken))
+channel3 = LineChannel(k3)
+k3.log("Channel Access Token : " + str(channel3.channelAccessToken))
+#==============================================================================#
+k4 = LineClient()
+#k4 = LineClient(authToken=' TOKEN MU CINTA')
+k4.log("Auth Token : " + str(k4.authToken))
+channel4 = LineChannel(k4)
+k4.log("Channel Access Token : " + str(channel4.channelAccessToken))
+#==============================================================================#
+k5 = LineClient()
+#k5 = LineClient(authToken=' TOKEN MU CINTA')
+k5.log("Auth Token : " + str(k5.authToken))
+channel5 = LineChannel(k5)
+k5.log("Channel Access Token : " + str(channel5.channelAccessToken))
+#==============================================================================#
 # Login line
 line = LINE('')
 print ("Login Succes")
