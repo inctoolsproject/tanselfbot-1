@@ -47,94 +47,143 @@ k5.log("Auth Token : " + str(k5.authToken))
 channel5 = LineChannel(k5)
 k5.log("Channel Access Token : " + str(channel5.channelAccessToken))
 #==============================================================================#
-# Login line
-line = LINE('')
-print ("Login Succes")
-print ("===============[ADMIN LOGIN]===============\n")
-print ('++ Auth Token : %s' % line.authToken)
-kicker = LINE('')
-print ('++ Auth Token : %s' % kicker.authToken)
-print ("===============[KICKER LOGIN NOSELF TOKEN]===============\n")
-kicker2 = LINE('')
-print ('++ Auth Token : %s' % kicker2.authToken)
-print ("===============[KICKER 2 LOGIN SUKSES]===============\n")
-kicker3 = LINE('')
-print ('++ Auth Token : %s' % kicker3.authToken)
-print ("===============[KICKER 3 LOGIN SUKSES]===============\n")
-kicker4 = LINE('')
-print ('++ Auth Token : %s' % kicker4.authToken)
-print ("===============[KICKER 4 LOGIN SUKSES]===============\n")
-kicker5 = LINE('')
-print ('++ Auth Token : %s' % kicker5.authToken)
-print ("===============[KICKER 5 LOGIN SUKSES]===============\n")
-g1 = LINE('')
-#print ("===============[ GHOST LOGIN SUKSES]===============\n")
-print ("Login usaptatan1983!!")
+k6 = LineClient()
+#k6 = LineClient(authToken=' TOKEN MU CINTA')
+k6.log("Auth Token : " + str(k6.authToken))
+channel6 = LineChannel(k6)
+k6.log("Channel Access Token : " + str(channel6.channelAccessToken))
+#==============================================================================#
+k7 = LineClient()
+#k7 = LineClient(authToken=' TOKEN MU CINTA')
+k7.log("Auth Token : " + str(k7.authToken))
+channel7 = LineChannel(k7)
+k7.log("Channel Access Token : " + str(channel7.channelAccessToken))
+#==============================================================================#
+k8 = LineClient()
+#k8 = LineClient(authToken=' TOKEN MU CINTA')
+k8.log("Auth Token : " + str(k8.authToken))
+channel8 = LineChannel(k8)
+k8.log("Channel Access Token : " + str(channel8.channelAccessToken))
+#==============================================================================#
+k9 = LineClient()
+#k9 = LineClient(authToken=' TOKEN MU CINTA')
+k9.log("Auth Token : " + str(k9.authToken))
+channel9 = LineChannel(k9)
+k9.log("Channel Access Token : " + str(channel9.channelAccessToken))
+#==============================================================================#
+k10 = LineClient()
+#k10 = LineClient(authToken=' TOKEN MU CINTA')
+k10.log("Auth Token : " + str(k10.authToken))
+channel10 = LineChannel(k10)
+k10.log("Channel Access Token : " + str(channel10.channelAccessToken))
+#==============================================================================#
+sw = LineClient()
+#sw = LineClient(authToken=' TOKEN MU CINTA')
+sw.log("Auth Token : " + str(sw.authToken))
+channel = LineChannel(sw)
+sw.log("Channel Access Token : " + str(channel.channelAccessToken))
+#==============================================================================#
+poll = LinePoll(ptatan1983)
+poll = LinePoll(k1)
+poll = LinePoll(k2)
+poll = LinePoll(k3)
+poll = LinePoll(k4)
+poll = LinePoll(k5)
+poll = LinePoll(k6)
+poll = LinePoll(k7)
+poll = LinePoll(k8)
+poll = LinePoll(k9)
+poll = LinePoll(k10)
+call = ptatan1983
+creator = ["u14f64e139a3817afaabe27d237afb36b"]
+owner = ["u14f64e139a3817afaabe27d237afb36b"]
+admin = ["u14f64e139a3817afaabe27d237afb36b"]
+staff = ["u14f64e139a3817afaabe27d237afb36b"]
+mid = ptatan1983.getProfile().mid
+Amid = k1.getProfile().mid
+Bmid = k2.getProfile().mid
+Cmid = k3.getProfile().mid
+Dmid = k4.getProfile().mid
+Emid = k5.getProfile().mid
+Fmid = k6.getProfile().mid
+Gmid = k7.getProfile().mid
+Hmid = k8.getProfile().mid
+Imid = k9.getProfile().mid
+Jmid = k10.getProfile().mid
+Zmid = sw.getProfile().mid
+KAC = [ptatan1983,k1,k2,k3,k4,k5,k6,k7,k8,k9,k10,sw]
+ABC = [ptatan1983,k1,k2,k3,k4,k5,k6,k7,k8,k9,k10,sw]
+Bots = [mid,Amid,Bmid,Cmid,Dmid,Emid,Fmid,Gmid,Hmid,Imid,Jmid,Zmid]
+nadya = admin + staff + creator
 
-myMid = line.profile.mid
-creator = ["uda8195e53e6c6e17f3f745743e477100"]
-owner = ["uda8195e53e6c6e17f3f745743e477100"]
-admin = ["uda8195e53e6c6e17f3f745743e477100"]
-staff = ["uda8195e53e6c6e17f3f745743e477100"]
-Amid = kicker.getProfile().mid
-Bmid = kicker2.getProfile().mid
-Cmid = kicker3.getProfile().mid
-Dmid = kicker4.getProfile().mid
-Emid = kicker5.getProfile().mid
-g1MID = g1.getProfile().mid
-KAC = [line,kicker,kicker2,kicker3,kicker3,kicker5]
-ABC = [kicker,kicker2,kicker3,kicker3,kicker5]
-Bots = [myMid,Amid,Bmid,Cmid,Dmid,Emid,g1MID]
-Ariff = creator + admin + owner + staff + Bots
-programStart = time.time()
-oepoll = OEPoll(line)
-tmp_text = []
-lurking = {}
 protectqr = []
 protectkick = []
-protecARoin = []
+protectjoin = []
 protectinvite = []
 protectcancel = []
-protectcanceljs = []
 protectantijs = []
 ghost = []
-zxcvzx = myMid
-with open('protectcancel.json', 'r') as fp:
-    protectcancel = json.load(fp)
-with open('protectcanceljs.json', 'r') as fp:
-    protectcanceljs = json.load(fp)    
-with open('protectantijs.json', 'r') as fp:
-    protectantijs = json.load(fp)
-with open('ghost.json', 'r') as fp:
-    ghost = json.load(fp)
-with open('protectinvite.json', 'r') as fp:
-    protectinvite = json.load(fp)
-Setbot3 = codecs.open("wait.json","r","utf-8")
-wait = json.load(Setbot3)
 
-settings = livejson.File('setting.json', True, False, 4)
+welcome = []
+simisimi = []
+translateen = []
+translateid = []
+translateth = []
+translatetw = []
+translatear = []
 
-bool_dict = {
-    True: ['Yes', 'Active', 'Success', 'Open', 'On'],
-    False: ['No', 'Not Active', 'Failed', 'Close', 'Off']
+myProfile = {
+	"displayName": "",
+	"statusMessage": "",
+	"pictureStatus": ""
 }
 
-responsename1 = kicker.getProfile().displayName
-responsename2 = kicker2.getProfile().displayName
-responsename3 = kicker3.getProfile().displayName
-responsename4 = kicker4.getProfile().displayName
-responsename5 = kicker5.getProfile().displayName
+ptatan1983Profile = ptatan1983.getProfile()
+myProfile["displayName"] = ptatan1983Profile.displayName
+myProfile["statusMessage"] = ptatan1983Profile.statusMessage
+myProfile["pictureStatus"] = ptatan1983Profile.pictureStatus
 
-# Backup profile
-profile = line.getContact(myMid)
-settings["myProfile"]["displayName"] = profile.displayName
-settings["myProfile"]["statusMessage"] = profile.statusMessage
-settings["myProfile"]["pictureStatus"] = profile.pictureStatus
-cont = line.getContact(myMid)
-settings["myProfile"]["videoProfile"] = cont.videoProfile
-coverId = line.getProfileDetail()["result"]["objectId"]
-settings["myProfile"]["coverId"] = coverId
+responsename1 = k1.getProfile().displayName
+responsename2 = k2.getProfile().displayName
+responsename3 = k3.getProfile().displayName
+responsename4 = k4.getProfile().displayName
+responsename5 = k5.getProfile().displayName
+responsename6 = k6.getProfile().displayName
+responsename7 = k7.getProfile().displayName
+responsename8 = k8.getProfile().displayName
+responsename9 = k9.getProfile().displayName
+responsename10 = k10.getProfile().displayName
+responsename = sw.getProfile().displayName
 
+cctv = {
+    "cyduk":{},
+    "point":{},
+    "sidermem":{}
+}
+
+with open('creator.json', 'r') as fp:
+    creator = json.load(fp)
+with open('owner.json', 'r') as fp:
+    owner = json.load(fp)
+with open('admin.json', 'r') as fp:
+    admin = json.load(fp)    
+
+Setbot1 = codecs.open("setting.json","r","utf-8")
+Setmain = json.load(Setbot1)
+Setbot2 = codecs.open("settings.json","r","utf-8")
+settings = json.load(Setbot2)
+Setbot3 = codecs.open("wait.json","r","utf-8")
+wait = json.load(Setbot3)
+Setbot4 = codecs.open("read.json","r","utf-8")
+read = json.load(Setbot4)
+
+mulai = time.time()
+
+msg_dict = {}
+msg_dict1 = {}
+
+tz = pytz.timezone("Asia/Jakarta")
+timeNow = datetime.now(tz=tz)
 # Check Json Data
 def restartProgram():
 print ("Login usaptatan1983!!")
