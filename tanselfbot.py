@@ -15,7 +15,7 @@ import youtube_dl
 ptatan1983 = LineClient()
 #ptatan1983 = LineClient(authToken=' TOKEN MU CINTA')
 ptatan1983.log("Auth Token : " + str(ptatan1983.authToken))
-channel = LineChannel(boy)
+channel = LineChannel(ptatan1983)
 ptatan1983.log("Channel Access Token : " + str(channel.channelAccessToken))
 #==============================================================================#
 k1 = LineClient()
